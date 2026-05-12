@@ -23,8 +23,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const categoryName = currentItems[0].categoryName;
 
   return (
-    <section className="rounded-lg border border-border bg-card/90 p-6 shadow-panel">
-      <div className="mb-5">
+    <section className="rounded-3xl border border-border bg-card p-6 shadow-panel md:p-8">
+      <div className="mb-6">
         <AppBreadcrumbs
           items={[
             { label: "地元紹介ページ", href: "/" },
@@ -32,7 +32,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           ]}
         />
 
-        <h1 className="mt-2 text-2xl font-bold text-foreground">
+        <h1 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-foreground">
           {categoryName}の一覧
         </h1>
       </div>

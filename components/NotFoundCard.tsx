@@ -10,10 +10,12 @@ type NotFoundCardProps = {
 
 export function NotFoundCard({ label, title, description }: NotFoundCardProps) {
   return (
-    <Card className="border-border bg-card/90 shadow-panel">
+    <Card className="border-border bg-card shadow-panel">
       <CardContent className="p-8">
-        <p className="text-sm font-bold text-destructive">{label}</p>
-        <h1 className="mt-2 text-2xl font-bold text-foreground">{title}</h1>
+        <p className="text-sm font-semibold text-primary">{label}</p>
+        <h1 className="mt-2 font-heading text-3xl font-semibold tracking-[-0.03em] text-foreground">
+          {title}
+        </h1>
         <p className="mt-4 leading-8 text-muted-foreground">{description}</p>
 
         <Button

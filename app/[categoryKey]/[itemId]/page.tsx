@@ -39,17 +39,17 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
         <section
           id="highlights"
-          className="scroll-section scroll-mt-24 overflow-hidden rounded-lg border border-border bg-card/90 shadow-panel"
+          className="scroll-section scroll-mt-24 overflow-hidden rounded-3xl border border-border bg-card shadow-panel"
         >
           <AspectRatio ratio={18 / 9}>
             <div
-              className="h-full w-full bg-linear-to-br from-secondary to-brand-soft bg-cover bg-center"
+              className="h-full w-full bg-secondary bg-cover bg-center"
               style={{ backgroundImage: `url('${item.mainImage}')` }}
             ></div>
           </AspectRatio>
           <div className="p-6">
-            <p className="text-base font-bold text-destructive">見どころ</p>
-            <h2 className="mt-2 text-3xl font-bold text-foreground">
+            <p className="text-sm font-semibold text-primary">見どころ</p>
+            <h2 className="mt-2 font-heading text-4xl font-semibold tracking-[-0.03em] text-foreground">
               {item.title}
             </h2>
             <p className="mt-4 leading-8 text-muted-foreground">
@@ -60,19 +60,19 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
         <section
           id="photos"
-          className="scroll-section scroll-mt-24 rounded-lg border border-border bg-card/90 p-6 shadow-panel"
+          className="scroll-section scroll-mt-24 rounded-3xl border border-border bg-card p-6 shadow-panel"
         >
-          <p className="text-base font-bold text-destructive">写真</p>
-          <h2 className="mt-2 text-2xl font-bold text-foreground">
+          <p className="text-sm font-semibold text-primary">写真</p>
+          <h2 className="mt-2 font-heading text-3xl font-semibold tracking-[-0.03em] text-foreground">
             写真で見る
           </h2>
 
           <div className="mt-5 grid grid-cols-3 gap-4 max-sm:grid-cols-1">
             {item.galleryImages.map((galleryImage) => (
-              <div key={galleryImage} className="overflow-hidden rounded-md">
+              <div key={galleryImage} className="overflow-hidden rounded-[24px] bg-secondary">
                 <AspectRatio ratio={16 / 9}>
                   <div
-                    className="h-full w-full bg-linear-to-br from-secondary to-brand-soft bg-cover bg-center"
+                    className="h-full w-full bg-secondary bg-cover bg-center"
                     style={{ backgroundImage: `url('${galleryImage}')` }}
                   ></div>
                 </AspectRatio>
@@ -83,12 +83,14 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
         <section
           id="access"
-          className="scroll-section scroll-mt-24 rounded-lg border border-border bg-card/90 p-6 shadow-panel"
+          className="scroll-section scroll-mt-24 rounded-3xl border border-border bg-card p-6 shadow-panel"
         >
-          <p className="text-base font-bold text-destructive">アクセス</p>
-          <h2 className="mt-2 text-2xl font-bold text-foreground">地図</h2>
+          <p className="text-sm font-semibold text-primary">アクセス</p>
+          <h2 className="mt-2 font-heading text-3xl font-semibold tracking-[-0.03em] text-foreground">
+            地図
+          </h2>
           <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-[1fr_260px]">
-            <div className="overflow-hidden rounded-lg border border-border bg-secondary">
+            <div className="overflow-hidden rounded-[24px] border border-border bg-secondary">
               <AspectRatio ratio={16 / 9}>
                 <iframe
                   className="h-full w-full"
@@ -101,11 +103,13 @@ export default async function DetailPage({ params }: DetailPageProps) {
               </AspectRatio>
             </div>
 
-            <Card className="border-border bg-card p-0 shadow-sm">
+            <Card className="border-border bg-card p-0 shadow-panel">
               <CardContent className="grid gap-4 p-5">
                 <div>
-                  <p className="text-sm font-bold text-destructive">最寄り駅</p>
-                  <p className="mt-1 text-2xl font-bold text-foreground">
+                  <p className="text-sm font-semibold text-muted-foreground">
+                    最寄り駅
+                  </p>
+                  <p className="mt-1 font-heading text-2xl font-semibold text-foreground">
                     {item.nearestStation}
                   </p>
                 </div>
@@ -113,10 +117,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
                 <Separator className="bg-border"></Separator>
 
                 <div>
-                  <p className="text-sm font-bold text-destructive">
+                  <p className="text-sm font-semibold text-muted-foreground">
                     駅からの時間
                   </p>
-                  <p className="mt-1 text-2xl font-bold text-foreground">
+                  <p className="mt-1 font-heading text-2xl font-semibold text-foreground">
                     徒歩{item.walkingTime}分
                   </p>
                 </div>

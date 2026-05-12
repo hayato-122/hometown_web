@@ -61,22 +61,22 @@ export function HomeCarousel() {
               <Link
                 href={category.href}
                 className={cn(
-                  "group block overflow-hidden rounded-lg border border-border bg-card text-left shadow-sm transition-all duration-500 ease-out",
-                  isCenter && "z-20 scale-100 opacity-100 blur-0",
+                  "group block rounded-2xl border border-border bg-card text-left transition-all duration-500 ease-out",
+                  isCenter && "z-20 scale-100 border-primary/30 opacity-100 blur-0 shadow-panel",
                   isSide && "z-10 scale-90 opacity-70 blur-[2px]",
                   !isCenter && !isSide && "z-0 scale-75 opacity-0 blur-sm",
                 )}
               >
-                <Card className="h-full overflow-hidden border-border bg-card p-0 shadow-sm transition group-hover:shadow-lg">
+                <Card className="h-full border-border bg-card p-3 transition">
                   <div
-                    className="aspect-video bg-linear-to-br from-secondary to-brand-soft bg-cover bg-center transition duration-500 group-hover:scale-105"
+                    className="aspect-video rounded-[24px] bg-secondary bg-cover bg-center transition duration-500 group-hover:scale-[1.02]"
                     style={{
                       backgroundImage: `url('${category.image}')`,
                     }}
                   />
 
-                  <CardContent className="p-4">
-                    <p className="text-xl font-bold text-foreground">
+                  <CardContent className="px-1 pb-1 pt-4">
+                    <p className="font-heading text-xl font-semibold tracking-[-0.02em] text-foreground">
                       {category.title}
                     </p>
                     <p className="mt-2 text-base leading-6 text-muted-foreground">

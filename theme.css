@@ -1,39 +1,46 @@
 @theme {
   /* Colors */
-  --color-electric-lime: #beff50;
-  --color-near-black: #14140f;
-  --color-pure-black: #000000;
-  --color-pure-white: #ffffff;
-  --color-warm-cream: #f5f5eb;
-  --color-parchment-card: #fafaf5;
-  --color-stone: #d2d2c8;
-  --color-graphite: #6e6e64;
-  --color-charcoal: #30302a;
-  --color-slate-border: #919183;
-  --color-signal-blue: #144fcc;
-  --color-coral-alert: #eb3131;
-  --color-mint-confirm: #1dc479;
+  --color-cloud-white: #ffffff;
+  --color-ash-white: #fafafa;
+  --color-slate-gray: #e4e4e7;
+  --color-dark-graphite: #f4f4f5;
+  --color-carbon-black: #09090b;
+  --color-charcoal-black: #18181b;
+  --color-steel-gray: #71717b;
+  --color-cadet-gray: #9f9fa9;
+  --color-lottie-teal: #019d91;
+  --color-vivid-aqua: #00ddb3;
+  --color-sunshine-yellow: #f0b100;
+  --color-electric-blue: #3a86ff;
+  --color-jolly-green: #94d19f;
+  --color-coral-pink: #ff8eed;
 
   /* Typography */
-  --font-otsono: 'OTSono', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 10px;
   --leading-caption: 1.5;
-  --text-body: 16px;
-  --leading-body: 1.5;
-  --text-subheading: 20px;
-  --leading-subheading: 1.4;
-  --text-heading-sm: 30px;
-  --leading-heading-sm: 1.2;
-  --text-heading: 40px;
-  --leading-heading: 1.1;
-  --text-heading-lg: 64px;
-  --leading-heading-lg: 1;
-  --tracking-heading-lg: -1.92px;
-  --text-display: 90px;
-  --leading-display: 0.89;
-  --tracking-display: -2.7px;
+  --tracking-caption: -0.1px;
+  --text-body: 14px;
+  --leading-body: 1.71;
+  --tracking-body: 0.1px;
+  --text-subheading: 18px;
+  --leading-subheading: 1.5;
+  --tracking-subheading: -0.1px;
+  --text-heading-sm: 24px;
+  --leading-heading-sm: 1.56;
+  --tracking-heading-sm: -0.3px;
+  --text-heading: 32px;
+  --leading-heading: 1.25;
+  --tracking-heading: -0.5px;
+  --text-heading-lg: 48px;
+  --leading-heading-lg: 1.2;
+  --tracking-heading-lg: -1.44px;
+  --text-display: 64px;
+  --leading-display: 1.15;
+  --tracking-display: -1.92px;
 
   /* Spacing */
   --spacing-8: 8px;
@@ -41,17 +48,19 @@
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-40: 40px;
+  --spacing-48: 48px;
   --spacing-64: 64px;
-  --spacing-72: 72px;
   --spacing-80: 80px;
   --spacing-96: 96px;
-  --spacing-224: 224px;
+  --spacing-160: 160px;
 
   /* Border Radius */
-  --radius-md: 4px;
   --radius-lg: 8px;
-  --radius-2xl: 18px;
-  --radius-3xl: 26px;
-  --radius-3xl-2: 32px;
-  --radius-3xl-3: 40px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 48px;
+
+  /* Shadows */
+  --shadow-subtle: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }

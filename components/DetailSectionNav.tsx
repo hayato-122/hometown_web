@@ -54,8 +54,10 @@ export function DetailSectionNav() {
   }, []);
 
   return (
-    <aside className="sticky top-40 self-start rounded-lg border border-border bg-card/90 p-4 shadow-sm max-md:static">
-      <h2 className="mb-3 text-base font-bold text-foreground">ページ内目次</h2>
+    <aside className="sticky top-40 self-start rounded-2xl border border-border bg-card p-4 shadow-panel max-md:static">
+      <h2 className="mb-3 font-heading text-base font-semibold text-foreground">
+        ページ内目次
+      </h2>
 
       <nav className="grid gap-2">
         {sectionLinks.map((sectionLink) => {
@@ -67,10 +69,10 @@ export function DetailSectionNav() {
               href={sectionLink.href}
               onClick={() => setActiveSectionId(sectionLink.id)}
               className={cn(
-                "rounded-md px-3 py-2 text-base font-bold transition",
+                "rounded-xl px-3 py-2 text-base font-semibold transition",
                 isActive
                   ? "bg-primary text-primary-foreground"
-                  : "text-primary hover:bg-surface-hover",
+                  : "text-muted-foreground hover:bg-surface-hover hover:text-foreground",
               )}
             >
               {sectionLink.label}

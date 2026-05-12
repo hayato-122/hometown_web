@@ -16,15 +16,17 @@ export function ItemList({ items }: ItemListProps) {
           href={`/${item.categoryKey}/${item.id}`}
           className="group block transition hover:-translate-y-1"
         >
-          <Card className="h-full overflow-hidden border-border bg-card p-0 shadow-sm transition group-hover:shadow-lg">
+          <Card className="h-full border-border bg-card p-3 shadow-panel transition group-hover:border-primary/40">
             <div
-              className="aspect-video bg-linear-to-br from-secondary to-brand-soft bg-cover bg-center"
+              className="aspect-video rounded-[24px] bg-secondary bg-cover bg-center"
               style={{
                 backgroundImage: `url('${item.mainImage}')`,
               }}
             ></div>
-            <CardContent className="p-4">
-              <p className="text-xl font-bold text-foreground">{item.title}</p>
+            <CardContent className="px-1 pb-1 pt-4">
+              <p className="font-heading text-xl font-semibold tracking-[-0.02em] text-foreground">
+                {item.title}
+              </p>
               <p className="mt-2 text-base leading-6 text-muted-foreground">
                 {item.shortText}
               </p>

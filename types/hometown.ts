@@ -17,7 +17,9 @@ export type HometownCategoryKey =
   | "food"
   | "nature"
   | "festival"
-  | "industry";
+  | "industry"
+  | "building"
+  | "tourspot";
 
 export type HometownCategory = {
   key: HometownCategoryKey;

@@ -1,50 +1,58 @@
-# Travelperk — Style Reference
-> Lime spark on warm parchment — electric CTA green against aged-paper cream, zero shadows, everything rounded at exactly 26px.
+# LottieFiles — Style Reference
+> Playful Precision amidst Animation; a digital canvas vibrant with motion, grounded by clear, spacious layouts.
 
 **Theme:** light
 
-Perk radiates controlled energy — a lime-charged black-and-cream field where electric #beff50 punches through near-black and warm off-white surfaces. The warm off-white (#f5f5eb) hero background reads as aged paper next to the electric lime, making the palette feel tactile rather than digital. A single custom sans, OTSono, does all the work at every scale from 10px UI labels to 200px display glyphs, with tight 0.89-0.90 leading and -0.03em tracking at display sizes making the oversized headlines feel compressed and purposeful. The 26px radius is the system's dominant shape language — applied uniformly to buttons, cards, and image frames — creating rounded-corner consistency that softens an otherwise high-contrast black/lime/cream palette. No shadows, no gradients — surfaces differ only by background value, with #14140f dark cards, #ffffff white cards, and #f5f5eb warm-cream cards all sharing the same 26px radius and no elevation metaphor.
+LottieFiles presents a playful yet precise aesthetic, balancing approachable organic illustrations with crisp, systematic UI elements. The design centers on a vibrant teal accent that energizes a largely achromatic palette, hinting at creativity and innovation without overwhelming. Rounded forms and generous spacing contribute to a friendly and user-centric experience, ensuring complex animation tools feel accessible to a broad audience. The strategic use of a robust sans-serif for headlines anchors the lighthearted visuals with a sense of reliable technology.
 
 ## Tokens — Colors
 
 | Name | Value | Token | Role |
 |------|-------|-------|------|
-| Electric Lime | `#beff50` | `--color-electric-lime` | Primary CTA buttons, active UI chips, icon accent fills — the single chromatic accent that detonates against every surface (near-black, white, and cream alike), creating urgency without red-coded alarm |
-| Near Black | `#14140f` | `--color-near-black` | Primary text color, dark card backgrounds, nav borders — a warmed black (not pure #000000) that pairs with cream for a slightly analog feeling |
-| Pure Black | `#000000` | `--color-pure-black` | High-contrast text, icon fills, button borders at max contrast |
-| Pure White | `#ffffff` | `--color-pure-white` | Card backgrounds, overlay surfaces, inverted button text |
-| Warm Cream | `#f5f5eb` | `--color-warm-cream` | Page hero background, section fills — the warm off-white that makes Electric Lime feel naturalistic rather than neon |
-| Parchment Card | `#fafaf5` | `--color-parchment-card` | Secondary card surface, nested panel backgrounds |
-| Stone | `#d2d2c8` | `--color-stone` | Borders, disabled states, circular icon-only buttons in inactive state |
-| Graphite | `#6e6e64` | `--color-graphite` | Body text, supporting labels, card subtext — warm mid-gray that keeps warmth consistent across the achromatic scale |
-| Charcoal | `#30302a` | `--color-charcoal` | Dark surface card backgrounds, secondary dark mode elements |
-| Slate Border | `#919183` | `--color-slate-border` | Dividers, subtle borders on light surfaces |
-| Signal Blue | `#144fcc` | `--color-signal-blue` | SVG icon fills — brand-category transport icons only |
-| Coral Alert | `#eb3131` | `--color-coral-alert` | Status badges — 'Needs Approval' destructive state only |
-| Mint Confirm | `#1dc479` | `--color-mint-confirm` | Status badges — 'Confirmed' positive state only |
+| Cloud White | `#ffffff` | `--color-cloud-white` | Page background, primary surface color for cards and interactive elements. |
+| Ash White | `#fafafa` | `--color-ash-white` | Slightly off-white background where subtle contrast is needed, input fields, subtle section dividers. |
+| Slate Gray | `#e4e4e7` | `--color-slate-gray` | Subtle borders, dividers, outlines for card elements. |
+| Dark Graphite | `#f4f4f5` | `--color-dark-graphite` | Secondary background for sections, muted buttons. |
+| Carbon Black | `#09090b` | `--color-carbon-black` | Primary text, prominent headings, strong contrast elements. |
+| Charcoal Black | `#18181b` | `--color-charcoal-black` | Hover states for dark text, occasionally as button background. |
+| Steel Gray | `#71717b` | `--color-steel-gray` | Secondary text, icons, muted brand elements. |
+| Cadet Gray | `#9f9fa9` | `--color-cadet-gray` | Fainter text, placeholder text, disabled states. |
+| Lottie Teal | `#019d91` | `--color-lottie-teal` | Primary call to action buttons, active navigation indicators, key brand accents. This moderate teal provides a fresh, energetic touch without being overly aggressive. |
+| Vivid Aqua | `#00ddb3` | `--color-vivid-aqua` | Used within illustrations and occasionally for very bold accent elements, appearing brighter than Lottie Teal. |
+| Sunshine Yellow | `#f0b100` | `--color-sunshine-yellow` | Highlighting specific elements in illustrations, secondary accent color for badges or notifications. |
+| Electric Blue | `#3a86ff` | `--color-electric-blue` | Used for specific interactive elements in illustrations, providing a bright, modern accent. |
+| Jolly Green | `#94d19f` | `--color-jolly-green` | A softer green, used primarily inside illustrations to add to the playful aesthetic. |
+| Coral Pink | `#ff8eed` | `--color-coral-pink` | A vibrant pink used in illustrations for character elements and other playful accents. |
 
 ## Tokens — Typography
 
-### OTSono — The sole typeface across every context — navigation, badges, body, hero — making the design legible entirely through weight and size differentiation rather than font switching. At 80–200px, 0.89 line-height stacks headlines tighter than their cap-height, creating a compressed slab-like mass. The -0.03em tracking at display sizes and +0.10em at small caps/labels span the entire letter-spacing vocabulary of the system. · `--font-otsono`
-- **Substitute:** Cabinet Grotesk, Geist, or General Sans (rounded terminals, high x-height grotesque)
-- **Weights:** 400, 500
-- **Sizes:** 10px, 12px, 13px, 14px, 16px, 17px, 18px, 20px, 22px, 24px, 30px, 32px, 40px, 64px, 80px, 90px, 200px
-- **Line height:** 0.89–1.50 (display: 0.89–0.90, body: 1.40–1.50, headings: 1.00–1.20)
-- **Letter spacing:** -0.03em at display sizes (80px, 90px, 200px); +0.10em at small label/badge sizes
-- **OpenType features:** `Not explicitly detected`
-- **Role:** The sole typeface across every context — navigation, badges, body, hero — making the design legible entirely through weight and size differentiation rather than font switching. At 80–200px, 0.89 line-height stacks headlines tighter than their cap-height, creating a compressed slab-like mass. The -0.03em tracking at display sizes and +0.10em at small caps/labels span the entire letter-spacing vocabulary of the system.
+### DM Sans — Display headlines and prominent marketing text. The tight letter spacing on larger sizes creates a modern, impactful feel, while maintaining readability at smaller headline sizes. · `--font-dm-sans`
+- **Substitute:** DM Sans (Google Fonts)
+- **Weights:** 400, 500, 600
+- **Sizes:** 14px, 16px, 18px, 20px, 24px, 32px, 48px, 64px, 96px
+- **Line height:** 1.04-1.56
+- **Letter spacing:** -0.05em at 96px, progressing to 0.01em at 14px
+- **Role:** Display headlines and prominent marketing text. The tight letter spacing on larger sizes creates a modern, impactful feel, while maintaining readability at smaller headline sizes.
+
+### Inter — Body text, navigation, buttons, and most UI elements. Its neutrality and legibility ensure a consistent and approachable voice across the interface, supporting the more expressive DM Sans. · `--font-inter`
+- **Substitute:** Inter (Google Fonts)
+- **Weights:** 400, 500, 600
+- **Sizes:** 10px, 12px, 14px, 16px, 18px, 24px, 32px
+- **Line height:** 1.10-1.71
+- **Letter spacing:** -0.01em
+- **Role:** Body text, navigation, buttons, and most UI elements. Its neutrality and legibility ensure a consistent and approachable voice across the interface, supporting the more expressive DM Sans.
 
 ### Type Scale
 
 | Role | Size | Line Height | Letter Spacing | Token |
 |------|------|-------------|----------------|-------|
-| caption | 10px | 1.5 | — | `--text-caption` |
-| body | 16px | 1.5 | — | `--text-body` |
-| subheading | 20px | 1.4 | — | `--text-subheading` |
-| heading-sm | 30px | 1.2 | — | `--text-heading-sm` |
-| heading | 40px | 1.1 | — | `--text-heading` |
-| heading-lg | 64px | 1 | -1.92px | `--text-heading-lg` |
-| display | 90px | 0.89 | -2.7px | `--text-display` |
+| caption | 10px | 1.5 | -0.1px | `--text-caption` |
+| body | 14px | 1.71 | 0.1px | `--text-body` |
+| subheading | 18px | 1.5 | -0.1px | `--text-subheading` |
+| heading-sm | 24px | 1.56 | -0.3px | `--text-heading-sm` |
+| heading | 32px | 1.25 | -0.5px | `--text-heading` |
+| heading-lg | 48px | 1.2 | -1.44px | `--text-heading-lg` |
+| display | 64px | 1.15 | -1.92px | `--text-display` |
 
 ## Tokens — Spacing & Shapes
 
@@ -61,167 +69,130 @@ Perk radiates controlled energy — a lime-charged black-and-cream field where e
 | 24 | 24px | `--spacing-24` |
 | 32 | 32px | `--spacing-32` |
 | 40 | 40px | `--spacing-40` |
+| 48 | 48px | `--spacing-48` |
 | 64 | 64px | `--spacing-64` |
-| 72 | 72px | `--spacing-72` |
 | 80 | 80px | `--spacing-80` |
 | 96 | 96px | `--spacing-96` |
-| 224 | 224px | `--spacing-224` |
+| 160 | 160px | `--spacing-160` |
 
 ### Border Radius
 
 | Element | Value |
 |---------|-------|
-| cards | 26px |
-| badges | 8px |
-| images | 26px |
-| buttons | 26px |
-| pillTabs | 26px |
-| iconButtons | 50% |
+| cards | 16px |
+| forms | 8px |
+| buttons | 12px |
+| thumbnails | 24px |
+
+### Shadows
+
+| Name | Value | Token |
+|------|-------|-------|
+| subtle | `rgba(0, 0, 0, 0.05) 0px 1px 2px 0px` | `--shadow-subtle` |
 
 ### Layout
 
 - **Page max-width:** 1200px
-- **Section gap:** 60px
-- **Card padding:** 24-40px
-- **Element gap:** 8-16px
+- **Section gap:** 40-80px
+- **Card padding:** 24-32px
+- **Element gap:** 8-24px
 
 ## Components
 
-### Primary CTA Button
-**Role:** Main conversion action — 'Book a demo', 'Get started'
+### Primary Lottie Teal Button
+**Role:** Primary call to action
 
-Background #beff50, text #14140f, border 1px solid #14140f, border-radius 26px, padding 16px 16px. OTSono 16px weight 500. No shadow. The lime fill makes this the loudest element on any surface — used sparingly, max 2 per page section.
+backgroundColor: #019d91, color: #ffffff, borderRadius: 12px, paddingTop: 8px, paddingRight: 24px, paddingBottom: 8px, paddingLeft: 24px. Text uses Inter font family. Prominent, inviting interaction.
 
-### Ghost Button — Dark
-**Role:** Secondary actions on light backgrounds
+### Ghost Navigation Button (Active)
+**Role:** Navigation links and secondary actions
 
-Background transparent, text #14140f, border 1px solid #14140f, border-radius 26px, padding 16px 12px–16px. OTSono 16px weight 400. Used for 'Learn more', 'Show all features' on cream/white backgrounds.
+backgroundColor: oklch(1 0 0) (transparent), color: #09090b, borderRadius: 0px, paddingTop: 0px, paddingRight: 0px, paddingBottom: 0px, paddingLeft: 0px. Text uses Inter font family. Understated but clear for navigation.
 
-### Ghost Button — Light
-**Role:** Secondary actions on dark backgrounds
+### Ghost Navigation Button (Inactive)
+**Role:** Inactive/secondary navigation links
 
-Background transparent, text #ffffff, border 1px solid #ffffff, border-radius 26px, padding 16px. OTSono 16px weight 400. Used when button sits on #14140f dark card or dark section.
+backgroundColor: rgba(0, 0, 0, 0) (transparent), color: #71717b, borderRadius: 6px, paddingTop: 4px, paddingRight: 24px, paddingBottom: 4px, paddingLeft: 24px. Text uses Inter font family. Muted to guide focus to active elements.
 
-### Circular Icon Button — Filled
-**Role:** Play, pause, nav arrows
+### Outline White Button
+**Role:** Secondary actions requiring emphasis
 
-Background #d2d2c8, text #000000, border 1px solid #000000, border-radius 50%, padding 0px (intrinsic icon sizing). Used for video player controls and carousel navigation.
+backgroundColor: oklch(1 0 0) (white), color: #09090b, borderRadius: 6px, paddingTop: 8px, paddingRight: 16px, paddingBottom: 8px, paddingLeft: 16px. Border is #e4e4e7. Text uses Inter font family. Offers a contrasting action without being as dominant as the primary button.
 
-### Circular Icon Button — Ghost
-**Role:** Alternate icon-only action
+### Feature Card
+**Role:** Showcasing product features or benefits
 
-Background transparent, text #000000, border 1px solid #14140f, border-radius 50%, padding 0px. Appears alongside filled circular variant for paired controls.
+backgroundColor: #ffffff, borderRadius: 16px, padding: 32px (inferred from common elementGap around text/icon blocks). Shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px. Contains a headline using DM Sans and body text using Inter, with a small icon.
 
-### White Feature Card
-**Role:** Product UI preview cards, floating info overlays on hero
+### Customer Showcase Card
+**Role:** Highlighting customer projects or testimonials
 
-Background #ffffff, border-radius 26px, no box-shadow, variable internal padding. Floats over hero cream background. Contains profile chips, flight info, or approval workflow UI. Text: #14140f primary, #6e6e64 secondary.
+backgroundColor: #ffffff, borderRadius: 16px, padding: 24px, or `auto` due to image crops. Shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px. Features imagery with rounded corners and accompanying text. The card often uses a specific background color from the site's palette for variety (e.g. #fff8e5, #94d19f).
 
-### Cream Feature Card
-**Role:** Section feature blocks on alternating layouts
+### Search Input Field
+**Role:** Site-wide search functionality
 
-Background #fafaf5, border-radius 26px, no shadow, padding 24-40px. Houses illustrations and feature copy. Text #14140f primary, #6e6e64 body.
+backgroundColor: #fafafa, border: 1px solid #e4e4e7, borderRadius: 8px. Placeholder text uses Cadet Gray (#9f9fa9) and Inter font. Icons are Steel Gray (#71717b).
 
-### Dark Feature Card
-**Role:** High-contrast feature highlight, pulled quote blocks
+### Testimonial Card
+**Role:** Displaying customer feedback
 
-Background #14140f, border-radius 26px, no shadow, padding 24-40px. Text and headlines in #ffffff. Electric Lime accents (#beff50) may appear as icon fills or highlight chips within.
-
-### Lime Accent Card
-**Role:** Hero feature callout — 'Real-time visibility' highlight block
-
-Background #beff50, border-radius 26px, no shadow, padding 24-40px. Text in #14140f or #000000. The only card surface using the brand accent — used once per section to designate the primary featured insight.
-
-### Text Badge / Status Chip
-**Role:** 'On time', 'Expense submitted', 'Confirmed', 'Needs Approval' labels
-
-Background #ffffff, text #14140f, border-radius 8px, padding 2px 8px. OTSono 12-13px weight 500. Status variants swap background or text to #1dc479 (confirmed) or #eb3131 (needs approval).
-
-### Announcement Banner
-**Role:** Top-of-page global notification strip
-
-Full-width, background #beff50, text #14140f, OTSono 14px weight 400. Contains inline 'Learn more' underline link and ✕ dismiss icon. The only globally persistent lime surface — reinforces brand color before hero loads.
-
-### Tab Pill Selector
-**Role:** 'Automate / Control / Support' section toggles
-
-Active state: background #14140f, text #ffffff, border-radius 26px, padding 8px 16px. Inactive state: background transparent, text #14140f. OTSono 14-16px weight 500. Container background is #d2d2c8 at 26px radius.
-
-### Navigation Bar
-**Role:** Sticky top nav
-
-Background #f5f5eb or #ffffff, no shadow. Logo left-aligned. Nav links in OTSono 16px weight 400, color #14140f. Right cluster: globe icon + 'Book a demo' ghost button + 'Get started' lime CTA + user icon + hamburger. Bottom border 1px solid #d2d2c8.
+backgroundColor: #ffffff, borderRadius: 16px, padding: 32px. Shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px. Features a bold quote in DM Sans, and author details in Inter.
 
 ## Do's and Don'ts
 
 ### Do
-- Use #beff50 as the exclusive CTA fill — max one lime button and one lime surface element per viewport; never fill two adjacent containers with lime
-- Apply 26px border-radius to all cards, buttons, and image frames regardless of content type — the single radius value IS the shape language
-- Set display headlines (64px+) at line-height 0.89–1.00 with -0.03em letter-spacing so stacked lines form a compressed typographic mass
-- Keep all surfaces on the warm achromatic scale: #14140f / #30302a / #fafaf5 / #f5f5eb / #ffffff — never introduce cool-tinted grays or blue-cast neutrals
-- Use #6e6e64 for all supporting body text and card subtext, reserving #14140f for primary labels and headlines only
-- Distinguish card hierarchy by background value alone: white (#ffffff) → cream (#fafaf5) → warm cream (#f5f5eb) → dark (#14140f) — no shadows, no borders needed
-- OTSono is the only typeface — use size and weight (400 vs 500) as the sole differentiation between body and emphasis
+- Prioritize DM Sans for headlines (sizes > 24px) with specific letter-spacing as defined in typography, using Carbon Black (#09090b) for high impact.
+- Use Lottie Teal (#019d91) exclusively for primary calls to action, maintaining its distinctive brand presence.
+- Apply rounded corners consistently: 12px for buttons, 16px for cards, and 24px for larger visual elements like image containers to reinforce approachability.
+- Maintain generous spacing with elementGap at 8px, 16px, or 24px, and sectionGap between 40-80px to ensure visual comfort and focus.
+- Employ the subtle shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px for all elevated cards and interactive elements, adding minimal depth.
+- Utilize Inter font at 14px or 16px for all body text, links, and UI labels, ensuring high readability with a default letter-spacing of -0.01em.
+- Ensure adequate contrast: Carbon Black (#09090b) on Cloud White (#ffffff) or Ash White (#fafafa) for all primary text content.
 
 ### Don't
-- Never use box-shadow or drop-shadow on any card or button — elevation is achieved through background color contrast, not shadow depth
-- Never use more than two border-radius values in a layout: 26px for all cards/buttons/images, 8px for badges/chips, 50% for icon-only circles — no other radii
-- Never place Electric Lime (#beff50) text on a white background — lime is a background color only; text on lime must be #14140f or #000000
-- Never introduce a second typeface — OTSono handles all scales from 10px UI labels to 200px display; switching fonts breaks the single-voice identity
-- Never use cool grays (#9ca3af, #6b7280 etc.) — all neutrals must carry the warm undertone of the #f5f5eb → #6e6e64 → #14140f scale
-- Never stack two dark cards (#14140f) without a cream or white surface between them — the dark/light alternation defines the page rhythm
-- Never apply the 26px radius to inline text links, dividers, or table rows — radius belongs only on bounded box elements
-
-## Surfaces
-
-| Level | Name | Value | Purpose |
-|-------|------|-------|---------|
-| 0 | Page Ground | `#f5f5eb` | Hero background and primary page fill — warm cream that makes lime feel organic not neon |
-| 1 | Section Surface | `#fafaf5` | Feature cards and alternating section backgrounds — one step brighter than page ground |
-| 2 | Elevated Card | `#ffffff` | White cards floating over cream backgrounds — the contrast provides the 'elevation' without shadow |
-| 3 | Dark Surface | `#14140f` | Dark feature cards and announcement strip — maximum contrast against all light surfaces |
+- Avoid applying excessive shadows; stick to the single, subtle shadow defined for elevation.
+- Do not introduce new chromatic colors outside of the defined brand and accent palette; maintain the vibrant teal focus with select pops of yellow/blue.
+- Refrain from using sharp corners or radii smaller than 8px for interactive elements; the visual style leans into softer, friendlier shapes.
+- Do not use DM Sans for large blocks of body text; reserve it for headlines and short, impactful statements to preserve its distinctive role.
+- Avoid dense, information-heavy sections without adequate white space; prioritize breathability and comfortable reading experiences.
+- Do not deviate from the specified dark neutral colors for primary text and headings; maintain high contrast and legibility.
+- Do not use Lottie Teal (#019d91) for body text or non-interactive elements; keep it reserved for key actions and brand accents.
 
 ## Elevation
 
-Zero shadow system — no box-shadow appears on any card or interactive element. Hierarchy is communicated entirely through background color: #14140f dark cards sit visually 'above' cream backgrounds not through shadow depth but through contrast mass. White (#ffffff) cards appear to float over #f5f5eb sections purely because of the value difference. This flat-surface approach makes the Electric Lime (#beff50) accent carry all the visual weight that shadows would otherwise provide.
+- **Card, Button:** `rgba(0, 0, 0, 0.05) 0px 1px 2px 0px`
 
 ## Imagery
 
-Product UI screenshots displayed as floating cards over the hero background, cropped at 26px radius to match the card system. A real hand holding a phone (product mockup) anchors the hero center — lifestyle-adjacent but product-focused, not editorial. The second section features a full-bleed video embed (no autoplay) with a 'Watch full video' pill button overlay, using motion documentary-style footage. Illustrations inside feature cards are flat, line-based, geometric — two-color (black line on lime or cream fill), matching the brand palette exactly. Icons throughout the UI are 1.5px stroke weight, monochrome (#14140f or #ffffff depending on surface). No photography outside the hero hand shot and video. Image-to-text ratio is low — the design is text and UI-screenshot dominant.
+The site heavily relies on custom, vibrant, and character-driven illustrations featuring a mix of geometric and organic shapes with bold outlines and a wide palette of vivid colors like Sunshine Yellow, Electric Blue, and Coral Pink. These illustrations are primarily decorative but also explanatory, conveying functionality or emotional tone through anthropomorphic elements and playful scenarios. Photography is limited to product screenshots, often presented within mockups (e.g., phone screens) with softly rounded corners. Icons are typically solid, monocolor (Steel Gray or Lottie Teal), and have a uniform stroke weight (inferred from visual consistency), used for navigation and feature highlighting. Image density is moderate to high, often taking up significant visual space in primary sections to support the text and enhance visual appeal.
 
 ## Layout
 
-Max-width ~1200px centered on a full-bleed warm cream (#f5f5eb) hero. Hero is full-viewport with centered headline text (OTSono 80-90px) and floating product UI cards arranged in a loose z-pattern around a central phone mockup. Below hero: alternating white and cream bands, each 60px vertical padding. Feature sections use a horizontal scroll card row (4 cards visible, arrow-navigated) rather than a static grid. Tab-switched feature sections (Automate / Control / Support) show 3-column card layouts within a contained max-width box. Logo bar (social proof) runs full-width on cream. Navigation is sticky, top bar, minimal — no mega-menu. Section transitions are seamless (no visual dividers, pure background-color shifts). Overall density is spacious — generous whitespace between the large display type and card elements.
+The layout follows a centered, max-width contained model, with a pageMaxWidth of approximately 1200px providing ample breathing room. The hero section is a split design with a large, bold headline on the left and a prominent, playful illustration on the right, setting an inviting tone. Sections alternate between full-bleed background colors (e.g., white, light gray bands) and content blocks, creating a consistent visual rhythm. Content is frequently arranged in two-column layouts (text alongside imagery/cards) or multi-column grids (3-4 columns for feature cards or customer showcases), maintaining clear visual hierarchy. Vertical spacing between sections is generous (40-80px). The navigation is a sticky top bar, providing constant access without being obtrusive.
 
 ## Agent Prompt Guide
 
-**Quick Color Reference**
-- Page background: #f5f5eb (warm cream)
-- Primary text: #14140f (near-black)
-- Supporting text: #6e6e64 (warm graphite)
-- CTA button fill: #beff50 (electric lime)
-- Card surface (light): #ffffff
-- Border / stone: #d2d2c8
+### Quick Color Reference
+- Text: Carbon Black (#09090b)
+- Background: Cloud White (#ffffff)
+- CTA: Lottie Teal (#019d91)
+- Border: Slate Gray (#e4e4e7)
+- Accent: Sunshine Yellow (#f0b100)
 
-**Example Component Prompts**
-
-1. Hero section: Background #f5f5eb full-bleed. Centered headline 'The intelligent platform for travel and spend' at 90px OTSono weight 500, #14140f, line-height 0.89, letter-spacing -0.03em. Below: two buttons side by side — 'Book a demo' (background #beff50, text #14140f, border 1px solid #14140f, border-radius 26px, padding 16px) and 'Get started' (background transparent, text #14140f, border 1px solid #14140f, border-radius 26px, padding 16px). Float three white (#ffffff) cards at 26px radius around a central phone mockup.
-
-2. Feature card (lime highlight): Background #beff50, border-radius 26px, padding 32px. Headline 'Real-time visibility & actionable insights' at 24px OTSono weight 500, #14140f. Body text 16px OTSono weight 400, #14140f, line-height 1.5. Flat two-color illustration (black lines on lime) in upper portion.
-
-3. Dark feature card: Background #14140f, border-radius 26px, padding 32px. Headline 'Role-based permissions & controls' at 30px OTSono weight 500, #ffffff, line-height 1.1. Body 16px OTSono weight 400, #6e6e64.
-
-4. Announcement banner: Full-width background #beff50. Text 'Focus on your next breakthrough. We'll handle the shadow work.' OTSono 14px weight 400, #14140f. Inline link 'Learn more' underlined, #14140f. ✕ close icon right-aligned, #14140f.
-
-5. Navigation bar: Background #f5f5eb. Logo 'perk+' left, OTSono 18px weight 500 #14140f. Nav links center: OTSono 16px weight 400 #14140f, gap 24px. Right cluster: ghost button 'Book a demo' (border 1px solid #14140f, radius 26px, padding 12px 16px) + CTA 'Get started' (background #beff50, border 1px solid #14140f, radius 26px, padding 12px 16px). Bottom border 1px #d2d2c8.
+### 3-5 Example Component Prompts
+1. Create a hero section: Cloud White background. Headline 'Great designs come alive with motion!' using DM Sans weight 600, size 64px, #09090b, letter-spacing -1.92px. Body text 'Create, manage and implement lightweight animations across websites, apps, presentations, social and more.' in Inter weight 400, size 18px, #09090b, line-height 1.5. Include a Primary Lottie Teal Button with text 'Get started for free'.
+2. Design a feature card: Cloud White background, 16px border-radius, shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, 32px padding on all sides. Headline 'Tiny' in DM Sans weight 500, size 24px, #09090b, line-height 1.56, letter-spacing -0.3px. Body text 'file format but mighty' in Inter weight 400, size 16px, #09090b, line-height 1.5.
+3. Implement a navigation bar: Ash White (#fafafa) background header, max-width 1200px centered. Main navigation links are Ghost Navigation Buttons (Active: #09090b, Inactive: #71717b), using Inter font weight 500, size 16px, padding 8px vertical, 16px horizontal. Include a Primary Lottie Teal Button 'Sign up' with no left/right padding specified, and a 'Log in' Outline White Button.
+4. Build a customer testimonial card: Cloud White background, 16px border-radius, shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, 32px padding. Quote text in DM Sans weight 500, size 24px, #09090b, line-height 1.25. Author name in Inter weight 500, size 16px, #09090b. Role in Inter weight 400, size 14px, #71717b.
 
 ## Similar Brands
 
-- **Ramp** — Same high-contrast dark/light card alternation with a single vivid accent color on CTA buttons against otherwise achromatic palette
-- **Notion** — Single typeface system doing all the hierarchy work through size/weight alone, warm off-white page background instead of pure white
-- **Linear** — Flat-surface card system with no shadows — elevation via background color contrast only
-- **Vercel** — Black/white/accent-only palette with 26px rounded cards and ghost+filled button pairing on the same nav
-- **Monzo** — Electric single-hue brand accent (coral/lime) punching against near-black and white in a fintech travel-adjacent context
+- **Figma** — Shares a brand identity that combines playful, colorful illustrations with a highly functional, clean UI and a clear sans-serif type system.
+- **Canva** — Exhibits a similar use of vibrant, accessible brand colors, cheerful illustrations for product explanation, and an emphasis on user-friendly design tools.
+- **Webflow** — Features strong, modern typography for headlines, a clean layout, and a focus on developer/designer tools, though with less emphasis on playful illustration.
+- **Miro** — Utilizes a friendly, clear, and spacious UI with simple forms and a core set of brand colors used strategically, alongside custom illustrative elements.
+- **Storybook** — Presents a clean, developer-centric interface with good use of whitespace and clear typography, incorporating playful illustrations or visual elements to lighten the technical feel.
 
 ## Quick Start
 
@@ -230,44 +201,52 @@ Max-width ~1200px centered on a full-bleed warm cream (#f5f5eb) hero. Hero is fu
 ```css
 :root {
   /* Colors */
-  --color-electric-lime: #beff50;
-  --color-near-black: #14140f;
-  --color-pure-black: #000000;
-  --color-pure-white: #ffffff;
-  --color-warm-cream: #f5f5eb;
-  --color-parchment-card: #fafaf5;
-  --color-stone: #d2d2c8;
-  --color-graphite: #6e6e64;
-  --color-charcoal: #30302a;
-  --color-slate-border: #919183;
-  --color-signal-blue: #144fcc;
-  --color-coral-alert: #eb3131;
-  --color-mint-confirm: #1dc479;
+  --color-cloud-white: #ffffff;
+  --color-ash-white: #fafafa;
+  --color-slate-gray: #e4e4e7;
+  --color-dark-graphite: #f4f4f5;
+  --color-carbon-black: #09090b;
+  --color-charcoal-black: #18181b;
+  --color-steel-gray: #71717b;
+  --color-cadet-gray: #9f9fa9;
+  --color-lottie-teal: #019d91;
+  --color-vivid-aqua: #00ddb3;
+  --color-sunshine-yellow: #f0b100;
+  --color-electric-blue: #3a86ff;
+  --color-jolly-green: #94d19f;
+  --color-coral-pink: #ff8eed;
 
   /* Typography — Font Families */
-  --font-otsono: 'OTSono', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 10px;
   --leading-caption: 1.5;
-  --text-body: 16px;
-  --leading-body: 1.5;
-  --text-subheading: 20px;
-  --leading-subheading: 1.4;
-  --text-heading-sm: 30px;
-  --leading-heading-sm: 1.2;
-  --text-heading: 40px;
-  --leading-heading: 1.1;
-  --text-heading-lg: 64px;
-  --leading-heading-lg: 1;
-  --tracking-heading-lg: -1.92px;
-  --text-display: 90px;
-  --leading-display: 0.89;
-  --tracking-display: -2.7px;
+  --tracking-caption: -0.1px;
+  --text-body: 14px;
+  --leading-body: 1.71;
+  --tracking-body: 0.1px;
+  --text-subheading: 18px;
+  --leading-subheading: 1.5;
+  --tracking-subheading: -0.1px;
+  --text-heading-sm: 24px;
+  --leading-heading-sm: 1.56;
+  --tracking-heading-sm: -0.3px;
+  --text-heading: 32px;
+  --leading-heading: 1.25;
+  --tracking-heading: -0.5px;
+  --text-heading-lg: 48px;
+  --leading-heading-lg: 1.2;
+  --tracking-heading-lg: -1.44px;
+  --text-display: 64px;
+  --leading-display: 1.15;
+  --tracking-display: -1.92px;
 
   /* Typography — Weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
 
   /* Spacing */
   --spacing-unit: 8px;
@@ -276,39 +255,33 @@ Max-width ~1200px centered on a full-bleed warm cream (#f5f5eb) hero. Hero is fu
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-40: 40px;
+  --spacing-48: 48px;
   --spacing-64: 64px;
-  --spacing-72: 72px;
   --spacing-80: 80px;
   --spacing-96: 96px;
-  --spacing-224: 224px;
+  --spacing-160: 160px;
 
   /* Layout */
   --page-max-width: 1200px;
-  --section-gap: 60px;
-  --card-padding: 24-40px;
-  --element-gap: 8-16px;
+  --section-gap: 40-80px;
+  --card-padding: 24-32px;
+  --element-gap: 8-24px;
 
   /* Border Radius */
-  --radius-md: 4px;
   --radius-lg: 8px;
-  --radius-2xl: 18px;
-  --radius-3xl: 26px;
-  --radius-3xl-2: 32px;
-  --radius-3xl-3: 40px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 48px;
 
   /* Named Radii */
-  --radius-cards: 26px;
-  --radius-badges: 8px;
-  --radius-images: 26px;
-  --radius-buttons: 26px;
-  --radius-pilltabs: 26px;
-  --radius-iconbuttons: 50%;
+  --radius-cards: 16px;
+  --radius-forms: 8px;
+  --radius-buttons: 12px;
+  --radius-thumbnails: 24px;
 
-  /* Surfaces */
-  --surface-page-ground: #f5f5eb;
-  --surface-section-surface: #fafaf5;
-  --surface-elevated-card: #ffffff;
-  --surface-dark-surface: #14140f;
+  /* Shadows */
+  --shadow-subtle: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 ```
 
@@ -317,40 +290,47 @@ Max-width ~1200px centered on a full-bleed warm cream (#f5f5eb) hero. Hero is fu
 ```css
 @theme {
   /* Colors */
-  --color-electric-lime: #beff50;
-  --color-near-black: #14140f;
-  --color-pure-black: #000000;
-  --color-pure-white: #ffffff;
-  --color-warm-cream: #f5f5eb;
-  --color-parchment-card: #fafaf5;
-  --color-stone: #d2d2c8;
-  --color-graphite: #6e6e64;
-  --color-charcoal: #30302a;
-  --color-slate-border: #919183;
-  --color-signal-blue: #144fcc;
-  --color-coral-alert: #eb3131;
-  --color-mint-confirm: #1dc479;
+  --color-cloud-white: #ffffff;
+  --color-ash-white: #fafafa;
+  --color-slate-gray: #e4e4e7;
+  --color-dark-graphite: #f4f4f5;
+  --color-carbon-black: #09090b;
+  --color-charcoal-black: #18181b;
+  --color-steel-gray: #71717b;
+  --color-cadet-gray: #9f9fa9;
+  --color-lottie-teal: #019d91;
+  --color-vivid-aqua: #00ddb3;
+  --color-sunshine-yellow: #f0b100;
+  --color-electric-blue: #3a86ff;
+  --color-jolly-green: #94d19f;
+  --color-coral-pink: #ff8eed;
 
   /* Typography */
-  --font-otsono: 'OTSono', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 10px;
   --leading-caption: 1.5;
-  --text-body: 16px;
-  --leading-body: 1.5;
-  --text-subheading: 20px;
-  --leading-subheading: 1.4;
-  --text-heading-sm: 30px;
-  --leading-heading-sm: 1.2;
-  --text-heading: 40px;
-  --leading-heading: 1.1;
-  --text-heading-lg: 64px;
-  --leading-heading-lg: 1;
-  --tracking-heading-lg: -1.92px;
-  --text-display: 90px;
-  --leading-display: 0.89;
-  --tracking-display: -2.7px;
+  --tracking-caption: -0.1px;
+  --text-body: 14px;
+  --leading-body: 1.71;
+  --tracking-body: 0.1px;
+  --text-subheading: 18px;
+  --leading-subheading: 1.5;
+  --tracking-subheading: -0.1px;
+  --text-heading-sm: 24px;
+  --leading-heading-sm: 1.56;
+  --tracking-heading-sm: -0.3px;
+  --text-heading: 32px;
+  --leading-heading: 1.25;
+  --tracking-heading: -0.5px;
+  --text-heading-lg: 48px;
+  --leading-heading-lg: 1.2;
+  --tracking-heading-lg: -1.44px;
+  --text-display: 64px;
+  --leading-display: 1.15;
+  --tracking-display: -1.92px;
 
   /* Spacing */
   --spacing-8: 8px;
@@ -358,18 +338,20 @@ Max-width ~1200px centered on a full-bleed warm cream (#f5f5eb) hero. Hero is fu
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-40: 40px;
+  --spacing-48: 48px;
   --spacing-64: 64px;
-  --spacing-72: 72px;
   --spacing-80: 80px;
   --spacing-96: 96px;
-  --spacing-224: 224px;
+  --spacing-160: 160px;
 
   /* Border Radius */
-  --radius-md: 4px;
   --radius-lg: 8px;
-  --radius-2xl: 18px;
-  --radius-3xl: 26px;
-  --radius-3xl-2: 32px;
-  --radius-3xl-3: 40px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 48px;
+
+  /* Shadows */
+  --shadow-subtle: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 ```
