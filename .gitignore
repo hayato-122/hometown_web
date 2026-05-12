@@ -22,7 +22,23 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+*.swp
+*.swo
+
+# local caches
+/.turbo
+/.cache
+.eslintcache
+.stylelintcache
+
+# local MCP / agent secrets
+.cursor/mcp.json
+.mcp.json
+
+# local / unlicensed images
+/public/images/
 
 # debug
 npm-debug.log*
