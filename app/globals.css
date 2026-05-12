@@ -146,6 +146,9 @@
   }
   html {
     @apply font-sans;
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted-foreground) transparent;
+    scrollbar-gutter: stable;
   }
 }
 
