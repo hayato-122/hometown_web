@@ -21,7 +21,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="pb-16">
         <HomeCarousel />
 
         <div className="pt-12">

@@ -4,16 +4,16 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import type { CarouselApi } from "@/components/ui/carousel";
 
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import { hometownCategories } from "@/data/hometownCategories";
@@ -21,11 +21,14 @@ import { hometownCategories } from "@/data/hometownCategories";
 export function HomeCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(hometownCategories.length);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     if (!api) return;
 
     const updateCurrent = () => {
+      setCount(api.scrollSnapList().length);
       setCurrent(api.selectedScrollSnap());
     };
 
@@ -40,8 +43,24 @@ export function HomeCarousel() {
     };
   }, [api]);
 
+  useEffect(() => {
+    if (!api || isPaused) return;
+
+    const timerId = window.setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+
+    return () => {
+      window.clearInterval(timerId);
+    };
+  }, [api, isPaused]);
+
+  const formattedCurrent = String(current + 1).padStart(2, "0");
+  const formattedCount = String(count).padStart(2, "0");
+  const progress = count === 0 ? 0 : ((current + 1) / count) * 100;
+
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.28 }}
@@ -49,69 +68,113 @@ export function HomeCarousel() {
         duration: 1.1,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="mx-auto mt-8 w-full max-w-5xl"
+      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-background pb-10 pt-0 md:pb-12"
+      onPointerEnter={() => setIsPaused(true)}
+      onPointerLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={() => setIsPaused(false)}
     >
-      <Carousel
-        setApi={setApi}
-        opts={{
-          align: "center",
-          loop: true,
-        }}
-        className="w-full"
-      >
-        <CarouselContent className="-ml-6">
-          {hometownCategories.map((category, index) => {
-            const rawDistance = Math.abs(index - current);
-            const distance = Math.min(
-              rawDistance,
-              hometownCategories.length - rawDistance,
-            );
-            const isCenter = distance === 0;
-            const isSide = distance === 1;
-
-            return (
+      <div className="mx-auto w-[min(1200px,calc(100%-32px))]">
+        <Carousel
+          setApi={setApi}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-5">
+            {hometownCategories.map((category, index) => (
               <CarouselItem
                 key={category.key}
-                className="basis-[72%] pl-6 md:basis-1/2 lg:basis-[38%]"
+                className="basis-full pl-5 sm:basis-[58%] md:basis-[46%] lg:basis-[32%]"
               >
                 <Link
                   href={category.href}
-                  className={cn(
-                    "group block rounded-2xl border border-border bg-card text-left transition-all duration-500 ease-out focus-visible:ring-3 focus-visible:ring-ring focus-visible:outline-none",
-                    isCenter && "z-20 scale-100 border-primary/30 opacity-100 blur-0 shadow-panel",
-                    isSide && "z-10 scale-90 opacity-70 blur-[2px]",
-                    !isCenter && !isSide && "z-0 scale-75 opacity-0 blur-sm",
-                  )}
+                  className="group block h-full transition duration-300 hover:-translate-y-1 focus-visible:ring-3 focus-visible:ring-ring focus-visible:outline-none"
                 >
-                  <Card className="h-full border-border bg-card p-3 transition">
-                    <div className="relative aspect-video overflow-hidden rounded-[24px] bg-secondary">
+                  <Card className="h-full overflow-hidden rounded-none border-border bg-card p-0 shadow-panel transition duration-300 group-hover:border-primary/40">
+                    <div className="relative aspect-video overflow-hidden bg-secondary">
                       <Image
                         src={category.image}
                         alt={category.title}
                         fill
-                        sizes="(min-width: 1024px) 38vw, (min-width: 768px) 50vw, 72vw"
+                        sizes="(min-width: 1024px) 32vw, (min-width: 768px) 46vw, 84vw"
                         className="object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
                       />
                     </div>
 
-                    <CardContent className="px-1 pb-1 pt-4">
-                      <p className="font-heading text-xl font-semibold tracking-[-0.02em] text-foreground">
+                    <CardContent className="p-5">
+                      <div className="mb-4 flex items-center justify-between gap-3">
+                        <p className="text-xs font-semibold tracking-[0.16em] text-primary">
+                          {category.name}
+                        </p>
+                        <p className="font-heading text-xs font-semibold text-muted-foreground">
+                          {String(index + 1).padStart(2, "0")}
+                        </p>
+                      </div>
+
+                      <p className="font-heading text-2xl font-semibold leading-tight tracking-[-0.02em] text-foreground">
                         {category.title}
                       </p>
-                      <p className="mt-2 text-base leading-6 text-muted-foreground">
+                      <p className="mt-3 text-base leading-7 text-muted-foreground">
                         {category.description}
                       </p>
                     </CardContent>
                   </Card>
                 </Link>
               </CarouselItem>
-            );
-          })}
-        </CarouselContent>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
-        <CarouselPrevious className="left-2 z-30" />
-        <CarouselNext className="right-2 z-30" />
-      </Carousel>
-    </motion.div>
+        <div className="mt-6 flex items-center justify-end gap-4">
+          <div className="h-px w-28 overflow-hidden bg-border md:w-40">
+            <div
+              className="h-full bg-primary transition-all duration-500 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+
+          <p className="font-heading text-sm font-semibold text-muted-foreground">
+            <span className="text-foreground">{formattedCurrent}</span>
+            <span className="mx-1">/</span>
+            {formattedCount}
+          </p>
+
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              aria-label="前のカテゴリを見る"
+              onClick={() => api?.scrollPrev()}
+              className="rounded-full bg-card shadow-panel"
+            >
+              <HugeiconsIcon
+                icon={ArrowLeft01Icon}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+            </Button>
+
+            <Button
+              type="button"
+              variant="default"
+              size="icon"
+              aria-label="次のカテゴリを見る"
+              onClick={() => api?.scrollNext()}
+              className="rounded-full shadow-panel"
+            >
+              <HugeiconsIcon
+                icon={ArrowRight01Icon}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </motion.section>
   );
 }
