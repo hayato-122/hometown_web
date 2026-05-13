@@ -35,7 +35,7 @@ export function DetailSectionNav() {
       },
       {
         root: null,
-        rootMargin: "-25% 0px -45% 0px",
+        rootMargin: "-25% 0px -25% 0px",
         threshold: [0, 0.15, 0.35, 0.6],
       },
     );
@@ -54,7 +54,7 @@ export function DetailSectionNav() {
   }, []);
 
   return (
-    <aside className="sticky top-40 self-start rounded-2xl border border-border bg-card p-4 shadow-panel max-md:static">
+    <aside className="sticky top-26 self-start rounded-2xl border border-border bg-card p-4 shadow-panel max-md:static">
       <h2 className="mb-3 font-heading text-base font-semibold text-foreground">
         ページ内目次
       </h2>

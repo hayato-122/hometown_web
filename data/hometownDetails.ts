@@ -7,7 +7,8 @@ export const hometownItems: HometownItem[] = [
     categoryKey: "history",
     title: "明石城跡",
     shortText: "町のシンボルである城跡。",
-    highlights: "明石城は、明石の歴史を感じられる代表的な場所です。",
+    highlights:
+      "明石城跡は、日本百名城に数えられる美しい石垣と、左右対称にそびえる二棟の三重櫓が最大の見どころです。かつて宮本武蔵が作庭に携わったと伝わる静かな庭園もあり、歴史の深さと四季折々の自然を同時に楽しめます。",
     nearestStation: "明石駅",
     walkingTime: 5,
     googleMapEmbedUrl:
