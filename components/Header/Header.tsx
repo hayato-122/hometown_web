@@ -1,13 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import { NavMenu } from "./NavMenu";
 import { MobileNav } from "./MobileNav";
+import { usePathname } from "next/navigation";
 
 export function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="sticky top-0 z-50 flex items-stretch gap-8 border-b border-border bg-card/95 shadow-sm backdrop-blur">
       <div className="flex items-center px-6">
         <Link
           href="/"
+          onClick={(event) => {
+            if (pathname !== "/") return;
+
+            event.preventDefault();
+            window.location.reload();
+            window.scrollTo({ top: 0 });
+          }}
           className="group flex items-center gap-2 whitespace-nowrap rounded-xl px-2.5 py-2 text-foreground transition hover:bg-accent"
         >
           <span className="grid size-9 place-items-center rounded-xl bg-primary font-heading text-base font-semibold text-primary-foreground">
