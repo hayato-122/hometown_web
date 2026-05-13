@@ -14,6 +14,10 @@ export function DetailSectionNav() {
   const sectionRatioRef = useRef(new Map<string, number>());
 
   useEffect(() => {
+    const isPageBottom = () =>
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 4;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,6 +26,11 @@ export function DetailSectionNav() {
             entry.isIntersecting ? entry.intersectionRatio : 0,
           );
         });
+
+        if (isPageBottom()) {
+          setActiveSectionId(sectionLinks[sectionLinks.length - 1].id);
+          return;
+        }
 
         const mostVisibleSection = sectionLinks
           .map((sectionLink) => ({
@@ -48,13 +57,23 @@ export function DetailSectionNav() {
       }
     });
 
+    const handleScroll = () => {
+      if (isPageBottom()) {
+        setActiveSectionId(sectionLinks[sectionLinks.length - 1].id);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => {
       observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <aside className="sticky top-26 self-start rounded-2xl border border-border bg-card p-4 shadow-panel max-md:static">
+    <aside className="sticky top-28 self-start rounded-2xl border border-border bg-card p-4 shadow-panel max-md:static">
       <h2 className="mb-3 font-heading text-base font-semibold text-foreground">
         ページ内目次
       </h2>
@@ -67,9 +86,10 @@ export function DetailSectionNav() {
             <a
               key={sectionLink.href}
               href={sectionLink.href}
+              aria-current={isActive ? "true" : undefined}
               onClick={() => setActiveSectionId(sectionLink.id)}
               className={cn(
-                "rounded-xl px-3 py-2 text-base font-semibold transition",
+                "rounded-xl px-3 py-2 text-base font-semibold transition duration-300",
                 isActive
                   ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:bg-surface-hover hover:text-foreground",
