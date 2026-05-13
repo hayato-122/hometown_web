@@ -14,11 +14,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-type NavMenuProps = {
-  isHeaderTransparent?: boolean;
-};
-
-export function NavMenu({ isHeaderTransparent = false }: NavMenuProps) {
+export function NavMenu() {
   const pathname = usePathname();
 
   const isCategoryActive = hometownCategories.some(
@@ -28,13 +24,9 @@ export function NavMenu({ isHeaderTransparent = false }: NavMenuProps) {
 
   const triggerClassName = cn(
     "relative flex h-full items-center whitespace-nowrap rounded-xl px-4 py-4 text-xl font-semibold transition after:absolute after:inset-x-4 after:bottom-2 after:h-0.5 after:rounded-full",
-    isHeaderTransparent
-      ? isCategoryActive
-        ? "text-accent after:bg-white hover:bg-white/10"
-        : "text-foreground bg-accent/80 after:bg-transparent hover:bg-white/10 hover:text-foreground"
-      : isCategoryActive
-        ? "text-foreground after:bg-primary hover:bg-accent"
-        : "text-foreground after:bg-transparent hover:bg-accent hover:text-foreground",
+    isCategoryActive
+      ? "text-foreground after:bg-primary hover:bg-accent"
+      : "text-foreground after:bg-transparent hover:bg-accent hover:text-foreground",
   );
 
   return (
