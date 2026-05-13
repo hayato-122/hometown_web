@@ -6,8 +6,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-      <section className="relative min-h-[calc(100svh-64px)] overflow-hidden">
+    <div>
+      <section className="relative left-1/2 -mt-8 min-h-[calc(100svh-64px)] w-screen -translate-x-1/2 overflow-hidden">
         <Image
           src="/images/明石海峡大橋_(51914616620).jpg"
           alt="明石海峡大橋"
@@ -60,6 +60,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }

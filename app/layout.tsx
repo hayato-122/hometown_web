@@ -24,7 +24,9 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background text-foreground">
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="mx-auto w-[min(1200px,calc(100%-32px))] py-8 max-md:w-[calc(100%-32px)]">
+          {children}
+        </main>
       </body>
     </html>
   );
