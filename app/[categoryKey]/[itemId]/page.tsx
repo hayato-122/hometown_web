@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { DetailSectionNav } from "@/components/DetailSectionNav";
+import { PhotoGallery } from "@/components/PhotoGallery";
 
 type DetailPageProps = {
   params: Promise<{
@@ -69,21 +70,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
               写真で見る
             </h2>
 
-            <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
-              {item.galleryImages.map((galleryImage) => (
-                <div
-                  key={galleryImage}
-                  className="overflow-hidden rounded-[24px] bg-secondary"
-                >
-                  <AspectRatio ratio={16 / 9}>
-                    <div
-                      className="h-full w-full bg-secondary bg-cover bg-center"
-                      style={{ backgroundImage: `url('${galleryImage}')` }}
-                    ></div>
-                  </AspectRatio>
-                </div>
-              ))}
-            </div>
+            <PhotoGallery images={item.galleryImages} title={item.title} />
           </section>
 
           <section
