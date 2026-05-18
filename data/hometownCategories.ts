@@ -1,4 +1,5 @@
 import type { HometownCategory } from "@/types/hometown";
+import { getImagePath } from "./getImagePath";
 
 export const hometownCategories: HometownCategory[] = [
   {
@@ -7,7 +8,7 @@ export const hometownCategories: HometownCategory[] = [
     title: "歴史を見る",
     description: "明石に残る城跡や歴史ある場所を紹介します。",
     href: "/history",
-    image: "/images/hometown/history/akashijyou/akashijyou-main.jpg",
+    image: getImagePath("akashijyou-main"),
   },
   {
     key: "food",
@@ -15,7 +16,7 @@ export const hometownCategories: HometownCategory[] = [
     title: "食べ物一覧",
     description: "明石の食べ物について知ろう",
     href: "/food",
-    image: "/images/hometown/history/akashijyou/akashijyou-main.jpg",
+    image: getImagePath("akashiyaki-main"),
   },
   {
     key: "nature",
@@ -23,15 +24,7 @@ export const hometownCategories: HometownCategory[] = [
     title: "自然一覧",
     description: "明石の自然について知ろう",
     href: "/nature",
-    image: "/images/hometown/history/akashijyou/akashijyou-main.jpg",
-  },
-  {
-    key: "festival",
-    name: "祭り",
-    title: "祭り一覧",
-    description: "明石の祭りについて知ろう",
-    href: "/festival",
-    image: "/images/hometown/history/akashijyou/akashijyou-main.jpg",
+    image: getImagePath("akashikouenn-main"),
   },
   {
     key: "building",
@@ -39,7 +32,7 @@ export const hometownCategories: HometownCategory[] = [
     title: "建築物一覧",
     description: "明石の建築物について知ろう",
     href: "/building",
-    image: "/images/hometown/history/akashijyou/akashijyou-main.jpg",
+    image: getImagePath("tennmonnkagakukann-main"),
   },
   {
     key: "tourspot",
@@ -47,6 +40,14 @@ export const hometownCategories: HometownCategory[] = [
     title: "観光地一覧",
     description: "明石の観光地について知ろう",
     href: "/tourspot",
-    image: "/images/hometown/history/akashijyou/akashijyou-main.jpg",
+    image: getImagePath("uonotana-main"),
+  },
+  {
+    key: "industry",
+    name: "産業",
+    title: "産業一覧",
+    description: "明石の産業について知ろう",
+    href: "/industry",
+    image: getImagePath("takotubo-main"),
   },
 ];
