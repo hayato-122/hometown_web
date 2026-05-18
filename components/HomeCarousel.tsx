@@ -16,12 +16,12 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import { hometownDetails } from "@/data/hometownDetails";
+import { hometownItems } from "@/data/hometownDetails";
 
 export function HomeCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(hometownDetails.length);
+  const [count, setCount] = useState(hometownItems.length);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
@@ -84,20 +84,20 @@ export function HomeCarousel() {
           className="w-full"
         >
           <CarouselContent className="-ml-5">
-            {hometownDetails.map((Detail, index) => (
+            {hometownItems.map((item, index) => (
               <CarouselItem
-                key={Detail.key}
+                key={item.id}
                 className="basis-full pl-5 sm:basis-[58%] md:basis-[46%] lg:basis-[32%]"
               >
                 <Link
-                  href={Detail.href}
+                  href={`/${item.categoryKey}/${item.id}`}
                   className="group block h-full transition duration-300 hover:-translate-y-1 focus-visible:ring-3 focus-visible:ring-ring focus-visible:outline-none"
                 >
                   <Card className="h-full overflow-hidden rounded-none border-border bg-card p-0 shadow-panel transition duration-300 group-hover:border-primary/40">
                     <div className="relative aspect-video overflow-hidden bg-secondary">
                       <Image
-                        src={Detail.image}
-                        alt={Detail.title}
+                        src={item.mainImage}
+                        alt={item.title}
                         fill
                         sizes="(min-width: 1024px) 32vw, (min-width: 768px) 46vw, 84vw"
                         className="object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
@@ -107,7 +107,7 @@ export function HomeCarousel() {
                     <CardContent className="p-5">
                       <div className="mb-4 flex items-center justify-between gap-3">
                         <p className="text-xs font-semibold tracking-[0.16em] text-primary">
-                          {category.name}
+                          {item.categoryName}
                         </p>
                         <p className="font-heading text-xs font-semibold text-muted-foreground">
                           {String(index + 1).padStart(2, "0")}
@@ -115,10 +115,10 @@ export function HomeCarousel() {
                       </div>
 
                       <p className="font-heading text-2xl font-semibold leading-tight tracking-[-0.02em] text-foreground">
-                        {category.title}
+                        {item.title}
                       </p>
                       <p className="mt-3 text-base leading-7 text-muted-foreground">
-                        {category.description}
+                        {item.shortText}
                       </p>
                     </CardContent>
                   </Card>
