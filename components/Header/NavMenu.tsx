@@ -23,7 +23,7 @@ export function NavMenu() {
   );
 
   const triggerClassName = cn(
-    "relative flex h-full items-center whitespace-nowrap rounded-xl px-4 py-4 text-xl font-semibold transition after:absolute after:inset-x-4 after:bottom-2 after:h-0.5 after:rounded-full",
+    "relative flex h-full items-center whitespace-nowrap rounded-xl px-4  text-xl font-semibold transition after:absolute after:inset-x-4 after:bottom-2 after:h-0.5 after:rounded-full",
     isCategoryActive
       ? "text-foreground after:bg-primary hover:bg-accent"
       : "text-foreground after:bg-transparent hover:bg-accent hover:text-foreground",
@@ -31,7 +31,7 @@ export function NavMenu() {
 
   return (
     <NavigationMenu className="flex h-full items-stretch">
-      <NavigationMenuList className="items-stretch gap-1">
+      <NavigationMenuList className="items-stretch gap-1 h-full">
         <NavigationMenuItem>
           <NavigationMenuTrigger className={triggerClassName}>
             カテゴリー

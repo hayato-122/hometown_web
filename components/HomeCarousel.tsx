@@ -16,12 +16,12 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import { hometownCategories } from "@/data/hometownCategories";
+import { hometownDetails } from "@/data/hometownDetails";
 
 export function HomeCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(hometownCategories.length);
+  const [count, setCount] = useState(hometownDetails.length);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
@@ -84,20 +84,20 @@ export function HomeCarousel() {
           className="w-full"
         >
           <CarouselContent className="-ml-5">
-            {hometownCategories.map((category, index) => (
+            {hometownDetails.map((Detail, index) => (
               <CarouselItem
-                key={category.key}
+                key={Detail.key}
                 className="basis-full pl-5 sm:basis-[58%] md:basis-[46%] lg:basis-[32%]"
               >
                 <Link
-                  href={category.href}
+                  href={Detail.href}
                   className="group block h-full transition duration-300 hover:-translate-y-1 focus-visible:ring-3 focus-visible:ring-ring focus-visible:outline-none"
                 >
                   <Card className="h-full overflow-hidden rounded-none border-border bg-card p-0 shadow-panel transition duration-300 group-hover:border-primary/40">
                     <div className="relative aspect-video overflow-hidden bg-secondary">
                       <Image
-                        src={category.image}
-                        alt={category.title}
+                        src={Detail.image}
+                        alt={Detail.title}
                         fill
                         sizes="(min-width: 1024px) 32vw, (min-width: 768px) 46vw, 84vw"
                         className="object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
