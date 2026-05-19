@@ -24,6 +24,7 @@ export function ScrollReveal({
     <motion.div
       className={className}
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y }}
+      animate={{ opacity: 1, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount, margin: "0px 0px -10% 0px" }}
       transition={{

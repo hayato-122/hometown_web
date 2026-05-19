@@ -9,6 +9,8 @@ export type ImageContent = {
   licenseKey:
     | "ccBySa40"
     | "ccBy40"
+    | "ccBy30"
+    | "ccBy25"
     | "ccBy20"
     | "ccBySa20"
     | "ccBySa25"
