@@ -8,8 +8,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
-  title: "地元紹介ページ",
+  title: "明石ガイド",
   description: "明石市を紹介するページ",
+  appleWebApp: {
+    title: "明石ガイド",
+  },
 };
 
 export default function RootLayout({

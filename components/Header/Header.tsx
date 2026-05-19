@@ -25,11 +25,11 @@ export function Header() {
         >
           <div className="relative size-10 place-items-center rounded-xl">
             <Image
-              src="/images/hometown/brand/tako_logo.png"
+              src="/icon0.svg"
               alt="ロゴ"
               fill
-              className="object-cover"
-              sizes="100vw"
+              className="object-contain"
+              sizes="40px"
             />
           </div>
           <span className="flex flex-col leading-none">

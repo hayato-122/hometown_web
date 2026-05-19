@@ -22,7 +22,6 @@ export function HomeCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(hometownItems.length);
-  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     if (!api) return;
@@ -44,7 +43,7 @@ export function HomeCarousel() {
   }, [api]);
 
   useEffect(() => {
-    if (!api || isPaused) return;
+    if (!api) return;
 
     const timerId = window.setInterval(() => {
       api.scrollNext();
@@ -53,7 +52,7 @@ export function HomeCarousel() {
     return () => {
       window.clearInterval(timerId);
     };
-  }, [api, isPaused]);
+  }, [api]);
 
   const formattedCurrent = String(current + 1).padStart(2, "0");
   const formattedCount = String(count).padStart(2, "0");
@@ -69,10 +68,6 @@ export function HomeCarousel() {
         ease: [0.16, 1, 0.3, 1],
       }}
       className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-background pb-10 pt-0 md:pb-12"
-      onPointerEnter={() => setIsPaused(true)}
-      onPointerLeave={() => setIsPaused(false)}
-      onFocusCapture={() => setIsPaused(true)}
-      onBlurCapture={() => setIsPaused(false)}
     >
       <div className="mx-auto w-[min(1200px,calc(100%-32px))]">
         <Carousel
@@ -87,7 +82,7 @@ export function HomeCarousel() {
             {hometownItems.map((item, index) => (
               <CarouselItem
                 key={item.id}
-                className="basis-full pl-5 sm:basis-[58%] md:basis-[46%] lg:basis-[32%]"
+                className="basis-full pl-5 sm:basis-1/2 lg:basis-1/3"
               >
                 <Link
                   href={`/${item.categoryKey}/${item.id}`}
