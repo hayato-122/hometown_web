@@ -307,22 +307,22 @@ export const hometownItems: HometownItem[] = [
     ],
   },
   {
-    id: "akashinori",
+    id: "kawasakijukogyo",
     categoryName: "産業",
     categoryKey: "industry",
-    title: "明石のり",
-    shortText: "冬の海で育てる、明石を代表する水産業。",
+    title: "川崎重工業 明石工場",
+    shortText: "世界へ広がるモーターサイクルとエンジン技術のものづくり拠点。",
     highlights:
-      "明石のりは、明石の海が育む代表的な水産物です。冬の海で養殖され、刈り取り後は加工場で乾海苔などへ仕上げられます。漁場、養殖、加工、流通がつながることで、海の恵みを地域の産業として届けているところが大きな特徴です。",
-    nearestStation: "東二見駅",
-    walkingTime: 10,
+      "川崎重工業 明石工場は、モーターサイクルやJet Ski、ATV、汎用エンジン、発電機、トランスミッションなどを扱う、明石を代表するものづくりの拠点です。さらに航空機用エンジンや産業用ロボット、ガスタービンなどにも関わる技術が集まり、水産業とは別の角度から明石の産業を知ることができます。",
+    nearestStation: "西明石駅",
+    walkingTime: 12,
     googleMapEmbedUrl:
-      "https://www.google.com/maps?q=%E6%9D%B1%E4%BA%8C%E8%A6%8B%E6%BC%81%E6%A5%AD%E5%8D%94%E5%90%8C%E7%B5%84%E5%90%88&output=embed",
-    mainImage: getImagePath("akashinori-main"),
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.3553258529243!2d134.98188147571545!3d34.64574168611145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554d4b3df64da41%3A0xe6bf44b0e512ce2e!2z5bed5bTu6YeN5bel5qWt77yI5qKq77yJIMSimuWzs-W3peWgtQ!5e0!3m2!1sja!2sjp!4v1780000000010!5m2!1sja!2sjp",
+    mainImage: getImagePath("kawasakijukogyo-main"),
     galleryImages: [
-      getImagePath("akashinori-1"),
-      getImagePath("akashinori-2"),
-      getImagePath("akashinori-3"),
+      getImagePath("kawasakijukogyo-1"),
+      getImagePath("kawasakijukogyo-2"),
+      getImagePath("kawasakijukogyo-3"),
     ],
   },
   {
