@@ -2,6 +2,17 @@ import type { ImageContent } from "@/types/imageData";
 
 export const imageData: ImageContent[] = [
   {
+    id: "homepage-top",
+    usedOn: ["トップページ"],
+    localPath: "/images/homepage-top.jpg",
+    title: "明石海峡大橋 (51914616620)",
+    author: "	m-louis .®",
+    sourceName: "flickr",
+    sourceUrl: "https://www.flickr.com/photos/m-louis/51914616620/",
+    licenseKey: "ccBySa20",
+    changes: "トリミングして使用",
+  },
+  {
     id: "akashijyou-main",
     usedOn: ["トップページ", "歴史一覧", "明石城跡 詳細ページ"],
     localPath: "/images/hometown/history/akashijyou/akashijyou-main.jpg",
@@ -184,8 +195,7 @@ export const imageData: ImageContent[] = [
     usedOn: ["建築物一覧", "天文科学館 詳細ページ"],
     localPath:
       "/images/hometown/building/tennmonnkagakukann/tennmonnkagakukann-3.jpg",
-    title:
-      "Master Clock",
+    title: "Master Clock",
     author: "halfrain",
     sourceName: "flickr",
     sourceUrl: "https://www.flickr.com/photos/halfrain/14616315301/",
@@ -196,7 +206,7 @@ export const imageData: ImageContent[] = [
     id: "uonotana-main",
     usedOn: ["トップページ", "建築物一覧", "魚の棚 詳細ページ"],
     localPath: "/images/hometown/tourspot/uonotana/uonotana-main.jpg",
-    title: "Akashi \"Uontana\" shopping street 2022-01-07",
+    title: 'Akashi "Uontana" shopping street 2022-01-07',
     author: "halfrain",
     sourceName: "Wikimedia Commons",
     sourceUrl:

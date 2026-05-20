@@ -2,13 +2,14 @@ import { HomeCarousel } from "@/components/HomeCarousel";
 import { HomeCategoryGrid } from "@/components/HomeCategoryGrid";
 import { HeroIntro } from "@/components/HeroIntro";
 import Image from "next/image";
+import { getImagePath } from "../data/getImagePath";
 
 export default function Home() {
   return (
     <div>
       <section className="relative left-1/2 -mt-18.25 min-h-[calc(100svh-64px)] w-screen -translate-x-1/2 overflow-hidden md:min-h-[calc(100svh-320px)]">
         <Image
-          src="/images/明石海峡大橋_(51914616620).jpg"
+          src={getImagePath("homepage-top")}
           alt="明石海峡大橋"
           fill
           priority
