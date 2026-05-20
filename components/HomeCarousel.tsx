@@ -87,9 +87,14 @@ export function HomeCarousel() {
                         sizes="(min-width: 1024px) 32vw, (min-width: 768px) 46vw, 84vw"
                         className="object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
                       />
+                      <div className="pointer-events-none absolute inset-x-3 bottom-3">
+                        <p className="translate-y-3 rounded-2xl bg-card/95 px-4 py-3 text-sm font-medium leading-6 text-foreground opacity-0 shadow-panel ring-1 ring-border/80 transition duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+                          {item.shortText}
+                        </p>
+                      </div>
                     </div>
 
-                    <CardContent className="px-5 py-0">
+                    <CardContent className="px-5 py-4">
                       <div className="mb-4 flex items-center justify-between gap-3">
                         <p className="text-xs font-semibold tracking-[0.16em] text-primary">
                           {item.categoryName}
@@ -101,9 +106,6 @@ export function HomeCarousel() {
 
                       <p className="font-heading text-2xl font-semibold leading-tight tracking-[-0.02em] text-foreground">
                         {item.title}
-                      </p>
-                      <p className="mt-3 text-base leading-7 text-muted-foreground">
-                        {item.shortText}
                       </p>
                     </CardContent>
                   </Card>
