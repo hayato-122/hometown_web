@@ -10,7 +10,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { hometownCategories } from "@/data/hometownCategories";
 
-export function MobileNav() {
+type MobileNavProps = {
+  isHeaderTransparent?: boolean;
+};
+
+export function MobileNav({ isHeaderTransparent = false }: MobileNavProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
@@ -44,6 +48,12 @@ export function MobileNav() {
         aria-expanded={isOpen}
         aria-controls="mobile-nav-menu"
         onClick={() => setIsOpen((current) => !current)}
+        className={cn(
+          "rounded-xl transition",
+          isHeaderTransparent
+            ? "bg-background/75 text-foreground shadow-sm hover:bg-background/90"
+            : "text-foreground hover:bg-accent",
+        )}
       >
         <span className="sr-only">メニューを開く</span>
         <HugeiconsIcon

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import type { CarouselApi } from "@/components/ui/carousel";
@@ -59,16 +58,7 @@ export function HomeCarousel() {
   const progress = count === 0 ? 0 : ((current + 1) / count) * 100;
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 48 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.28 }}
-      transition={{
-        duration: 1.1,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-background pb-10 pt-0 md:pb-12"
-    >
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-background pb-10 pt-0 md:pb-12">
       <div className="mx-auto w-[min(1200px,calc(100%-32px))]">
         <Carousel
           setApi={setApi}
@@ -99,7 +89,7 @@ export function HomeCarousel() {
                       />
                     </div>
 
-                    <CardContent className="p-5">
+                    <CardContent className="px-5 py-0">
                       <div className="mb-4 flex items-center justify-between gap-3">
                         <p className="text-xs font-semibold tracking-[0.16em] text-primary">
                           {item.categoryName}
@@ -170,6 +160,6 @@ export function HomeCarousel() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
