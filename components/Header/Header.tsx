@@ -48,9 +48,9 @@ export function Header() {
           }}
           className={cn(
             "group flex h-12 items-center gap-2 whitespace-nowrap rounded-xl px-2.5 transition",
-            hasScrolled
-              ? "text-foreground hover:bg-accent"
-              : "bg-background/75 text-foreground shadow-sm hover:bg-background/90",
+            isHeaderTransparent
+              ? "bg-background/75 text-foreground shadow-sm hover:bg-background/90"
+              : "text-foreground hover:bg-accent",
           )}
         >
           <div className="relative size-10 place-items-center rounded-xl">
