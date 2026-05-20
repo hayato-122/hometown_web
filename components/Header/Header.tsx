@@ -12,6 +12,7 @@ export function Header() {
   const pathname = usePathname();
   const [hasScrolled, setHasScrolled] = useState(false);
   const isHome = pathname === "/";
+  const isCreditsActive = pathname === "/credits";
   const isHeaderTransparent = isHome && !hasScrolled;
 
   useEffect(() => {
@@ -75,6 +76,22 @@ export function Header() {
 
       <div className="hidden h-12 items-center md:flex">
         <NavMenu isHeaderTransparent={isHeaderTransparent} />
+      </div>
+
+      <div className="ml-auto hidden h-12 items-center px-4 md:flex">
+        <Link
+          href="/credits"
+          className={cn(
+            "relative flex h-full items-center whitespace-nowrap rounded-xl px-4 text-sm font-medium transition after:absolute after:inset-x-4 after:bottom-2 after:h-0.5 after:rounded-full",
+            isHeaderTransparent
+              ? "bg-background/75 text-foreground shadow-sm hover:bg-background/90 after:bg-transparent"
+              : isCreditsActive
+                ? "text-foreground after:bg-primary hover:bg-accent"
+                : "text-muted-foreground after:bg-transparent hover:bg-accent hover:text-foreground",
+          )}
+        >
+          CREDITS
+        </Link>
       </div>
 
       <div className="ml-auto flex items-center px-4 md:hidden">

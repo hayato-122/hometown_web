@@ -27,12 +27,12 @@ export function NavMenu({ isHeaderTransparent = false }: NavMenuProps) {
   );
 
   const triggerClassName = cn(
-    "relative flex h-full items-center whitespace-nowrap rounded-xl px-4 text-xl font-semibold transition after:absolute after:inset-x-4 after:bottom-2 after:h-0.5 after:rounded-full",
+    "relative flex h-full items-center whitespace-nowrap rounded-xl px-4 text-sm font-medium transition after:absolute after:inset-x-4 after:bottom-2 after:h-0.5 after:rounded-full",
     isHeaderTransparent
       ? "bg-background/75 text-foreground shadow-sm hover:bg-background/90 after:bg-transparent"
       : isCategoryActive
         ? "text-foreground after:bg-primary hover:bg-accent"
-        : "text-foreground after:bg-transparent hover:bg-accent hover:text-foreground",
+        : "text-muted-foreground after:bg-transparent hover:bg-accent hover:text-foreground",
   );
 
   return (
@@ -40,7 +40,7 @@ export function NavMenu({ isHeaderTransparent = false }: NavMenuProps) {
       <NavigationMenuList className="items-stretch gap-1 h-full">
         <NavigationMenuItem>
           <NavigationMenuTrigger className={triggerClassName}>
-            カテゴリー
+            CATEGORIES
           </NavigationMenuTrigger>
 
           <NavigationMenuContent>

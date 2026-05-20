@@ -18,6 +18,7 @@ export function MobileNav({ isHeaderTransparent = false }: MobileNavProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
+  const isCreditsActive = pathname === "/credits";
 
   useEffect(() => {
     if (!isOpen) return;
@@ -70,7 +71,7 @@ export function MobileNav({ isHeaderTransparent = false }: MobileNavProps) {
           className="absolute right-0 top-full z-50 mt-2 grid w-[min(320px,calc(100vw-32px))] gap-2 rounded-2xl border border-border bg-popover p-2 text-popover-foreground shadow-2xl"
         >
           <p className="px-3 pt-2 text-xs font-semibold text-muted-foreground">
-            カテゴリー
+            CATEGORIES
           </p>
 
           {hometownCategories.map((category) => {
@@ -101,9 +102,14 @@ export function MobileNav({ isHeaderTransparent = false }: MobileNavProps) {
           <Link
             href="/credits"
             onClick={() => setIsOpen(false)}
-            className="rounded-xl p-3 text-sm font-semibold text-muted-foreground transition hover:bg-muted hover:text-foreground"
+            className={cn(
+              "rounded-xl p-3 text-sm font-semibold transition",
+              isCreditsActive
+                ? "bg-muted text-foreground"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground",
+            )}
           >
-            クレジット
+            CREDITS
           </Link>
         </div>
       )}
