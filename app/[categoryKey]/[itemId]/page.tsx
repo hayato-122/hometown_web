@@ -29,7 +29,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
   }
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <ScrollReveal y={24}>
         <AppBreadcrumbs
           items={[
@@ -43,11 +43,11 @@ export default async function DetailPage({ params }: DetailPageProps) {
       <article className="grid grid-cols-[220px_1fr] gap-6 max-md:grid-cols-1">
         <DetailSectionNav />
 
-        <div className="space-y-5">
+        <div className="space-y-6">
           <ScrollReveal>
             <section
               id="highlights"
-              className="scroll-section scroll-mt-32 overflow-hidden rounded-3xl border border-border bg-card shadow-panel"
+              className="scroll-section scroll-mt-32 overflow-hidden rounded-2xl bg-card shadow-panel ring-1 ring-border/80"
             >
               <AspectRatio ratio={18 / 9} className="bg-secondary">
                 <Image
@@ -60,10 +60,12 @@ export default async function DetailPage({ params }: DetailPageProps) {
                 />
               </AspectRatio>
               <div className="p-6">
-                <p className="text-sm font-semibold text-primary">見どころ</p>
-                <h2 className="mt-2 font-heading text-4xl font-semibold leading-tight tracking-[-0.03em] text-foreground">
+                <p className="text-xs font-semibold tracking-[0.16em] text-primary">
+                  HIGHLIGHTS
+                </p>
+                <h1 className="mt-2 font-heading text-4xl font-semibold leading-tight tracking-[-0.03em] text-foreground">
                   {item.title}
-                </h2>
+                </h1>
                 <p className="mt-4 whitespace-pre-line break-words text-base leading-[1.9] text-muted-foreground md:text-lg md:leading-[1.85]">
                   {item.highlights}
                 </p>
@@ -74,9 +76,11 @@ export default async function DetailPage({ params }: DetailPageProps) {
           <ScrollReveal>
             <section
               id="photos"
-              className="scroll-section scroll-mt-32 rounded-3xl border border-border bg-card p-6 shadow-panel"
+              className="scroll-section scroll-mt-32 rounded-2xl bg-card p-6 shadow-panel ring-1 ring-border/80"
             >
-              <p className="text-sm font-semibold text-primary">写真</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-primary">
+                PHOTOS
+              </p>
               <h2 className="mt-2 font-heading text-3xl font-semibold tracking-[-0.03em] text-foreground">
                 写真で見る
               </h2>
@@ -88,9 +92,11 @@ export default async function DetailPage({ params }: DetailPageProps) {
           <ScrollReveal>
             <section
               id="access"
-              className="scroll-section scroll-mt-32 rounded-3xl border border-border bg-card p-6 shadow-panel"
+              className="scroll-section scroll-mt-32 rounded-2xl bg-card p-6 shadow-panel ring-1 ring-border/80"
             >
-              <p className="text-sm font-semibold text-primary">アクセス</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-primary">
+                ACCESS
+              </p>
               <h2 className="mt-2 font-heading text-3xl font-semibold tracking-[-0.03em] text-foreground">
                 地図
               </h2>
@@ -108,11 +114,11 @@ export default async function DetailPage({ params }: DetailPageProps) {
                   </AspectRatio>
                 </div>
 
-                <Card className="border-border bg-card p-0 shadow-panel">
+                <Card className="bg-card p-0 shadow-panel ring-1 ring-border/80">
                   <CardContent className="grid gap-4 p-5">
                     <div>
-                      <p className="text-sm font-semibold text-primary">
-                        最寄り駅
+                      <p className="text-xs font-semibold tracking-[0.16em] text-primary">
+                        NEAREST STATION
                       </p>
                       <p className="mt-1 font-heading text-2xl font-semibold text-foreground">
                         {item.nearestStation}
@@ -122,8 +128,8 @@ export default async function DetailPage({ params }: DetailPageProps) {
                     <Separator className="bg-border"></Separator>
 
                     <div>
-                      <p className="text-sm font-semibold text-primary">
-                        駅からの時間
+                      <p className="text-xs font-semibold tracking-[0.16em] text-primary">
+                        WALKING TIME
                       </p>
                       <p className="mt-1 font-heading text-2xl font-semibold text-foreground">
                         徒歩{item.walkingTime}分

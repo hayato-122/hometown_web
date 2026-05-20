@@ -51,7 +51,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </p>
             </div>
 
-            <p className="rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-muted-foreground">
+            <p className="rounded-full bg-card px-4 py-2 text-sm font-semibold text-muted-foreground shadow-panel ring-1 ring-border/80">
               {String(currentItems.length).padStart(2, "0")} 件
             </p>
           </div>

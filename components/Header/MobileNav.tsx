@@ -68,7 +68,7 @@ export function MobileNav({ isHeaderTransparent = false }: MobileNavProps) {
       {isOpen && (
         <div
           id="mobile-nav-menu"
-          className="absolute right-0 top-full z-50 mt-2 grid w-[min(320px,calc(100vw-32px))] gap-2 rounded-2xl border border-border bg-popover p-2 text-popover-foreground shadow-2xl"
+          className="absolute right-0 top-full z-50 mt-2 grid w-[min(320px,calc(100vw-32px))] gap-2 rounded-2xl bg-popover p-2 text-popover-foreground shadow-panel ring-1 ring-border/80"
         >
           <p className="px-3 pt-2 text-xs font-semibold text-muted-foreground">
             CATEGORIES

@@ -15,7 +15,6 @@ export default function Home() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-white/5" />
         <div className="relative z-10 flex min-h-[calc(100svh-64px)] items-center justify-center px-6 md:min-h-[calc(100svh-320px)] md:px-12">
           <HeroIntro />
         </div>

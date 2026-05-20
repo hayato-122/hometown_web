@@ -73,9 +73,9 @@ export function DetailSectionNav() {
   }, []);
 
   return (
-    <aside className="sticky top-28 self-start rounded-2xl border border-border bg-card p-4 shadow-panel max-md:static">
-      <h2 className="mb-3 font-heading text-base font-semibold text-foreground">
-        ページ内目次
+    <aside className="sticky top-28 self-start rounded-2xl bg-card p-4 shadow-panel ring-1 ring-border/80 max-md:static">
+      <h2 className="mb-3 text-xs font-semibold tracking-[0.16em] text-muted-foreground">
+        CONTENTS
       </h2>
 
       <nav className="grid gap-2">
@@ -89,9 +89,9 @@ export function DetailSectionNav() {
               aria-current={isActive ? "true" : undefined}
               onClick={() => setActiveSectionId(sectionLink.id)}
               className={cn(
-                "rounded-xl px-3 py-2 text-base font-semibold transition duration-300",
+                "relative rounded-xl px-3 py-2 text-sm font-medium transition duration-300 before:absolute before:bottom-2 before:left-0 before:top-2 before:w-0.5 before:rounded-full before:bg-transparent",
                 isActive
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-secondary text-foreground before:bg-primary"
                   : "text-muted-foreground hover:bg-surface-hover hover:text-foreground",
               )}
             >

@@ -134,7 +134,7 @@ export default function CreditsPage() {
         </Card>
       </div>
 
-      <div className="rounded-3xl bg-card shadow-panel ring-1 ring-border/80">
+      <div className="rounded-2xl bg-card shadow-panel ring-1 ring-border/80">
         <div className="border-b border-border px-5 py-4 md:px-6">
           <h2 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-foreground">
             ライセンス内訳
@@ -160,7 +160,7 @@ export default function CreditsPage() {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-3xl bg-card shadow-panel ring-1 ring-border/80">
+      <div className="overflow-hidden rounded-2xl bg-card shadow-panel ring-1 ring-border/80">
         <div className="border-b border-border px-5 py-4 md:px-6">
           <h2 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-foreground">
             使用画像一覧

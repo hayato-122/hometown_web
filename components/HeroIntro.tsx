@@ -7,8 +7,8 @@ export function HeroIntro() {
 
   if (shouldReduceMotion) {
     return (
-      <div className="max-w-3xl translate-y-10 text-white text-shadow-lg text-shadow-black/99">
-        <p className="text-center text-xl font-semibold tracking-[0.2em] md:text-2xl">
+      <div className="max-w-3xl translate-y-10 text-white drop-shadow-[0_2px_18px_rgb(0_0_0/0.45)]">
+        <p className="text-center text-sm font-semibold tracking-[0.18em] md:text-base">
           AKASHI HOMETOWN GUIDE
         </p>
         <h1 className="mt-4 text-center font-heading text-4xl font-semibold tracking-[-0.03em] md:text-6xl">
@@ -22,7 +22,7 @@ export function HeroIntro() {
     <motion.div
       initial="hidden"
       animate="show"
-      className="max-w-3xl translate-y-10 text-white text-shadow-lg text-shadow-black/99"
+      className="max-w-3xl translate-y-10 text-white drop-shadow-[0_2px_18px_rgb(0_0_0/0.45)]"
     >
       <div className="overflow-hidden">
         <motion.p
@@ -34,7 +34,7 @@ export function HeroIntro() {
             duration: 1.05,
             ease: [0.16, 1, 0.3, 1],
           }}
-          className="text-center text-xl font-semibold tracking-[0.2em] md:text-2xl"
+          className="text-center text-sm font-semibold tracking-[0.18em] md:text-base"
         >
           AKASHI HOMETOWN GUIDE
         </motion.p>
