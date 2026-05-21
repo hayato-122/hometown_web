@@ -3,6 +3,8 @@ import "./globals.css";
 import { DM_Sans, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Header } from "../components/Header/Header";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" });
@@ -30,6 +32,8 @@ export default function RootLayout({
         <main className="mx-auto w-[min(1200px,calc(100%-32px))] py-8 max-md:w-[calc(100%-32px)]">
           {children}
         </main>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
