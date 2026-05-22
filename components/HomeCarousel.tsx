@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -21,6 +21,28 @@ export function HomeCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(hometownItems.length);
+  const autoScrollTimerRef = useRef<number | null>(null);
+
+  const clearAutoScrollTimer = useCallback(() => {
+    if (autoScrollTimerRef.current === null) return;
+
+    window.clearInterval(autoScrollTimerRef.current);
+    autoScrollTimerRef.current = null;
+  }, []);
+
+  const startAutoScrollTimer = useCallback(() => {
+    if (!api) return;
+
+    clearAutoScrollTimer();
+
+    autoScrollTimerRef.current = window.setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+  }, [api, clearAutoScrollTimer]);
+
+  const resetAutoScrollTimer = useCallback(() => {
+    startAutoScrollTimer();
+  }, [startAutoScrollTimer]);
 
   useEffect(() => {
     if (!api) return;
@@ -42,16 +64,22 @@ export function HomeCarousel() {
   }, [api]);
 
   useEffect(() => {
-    if (!api) return;
-
-    const timerId = window.setInterval(() => {
-      api.scrollNext();
-    }, 3000);
+    startAutoScrollTimer();
 
     return () => {
-      window.clearInterval(timerId);
+      clearAutoScrollTimer();
     };
-  }, [api]);
+  }, [startAutoScrollTimer, clearAutoScrollTimer]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    api.on("pointerUp", resetAutoScrollTimer);
+
+    return () => {
+      api.off("pointerUp", resetAutoScrollTimer);
+    };
+  }, [api, resetAutoScrollTimer]);
 
   const formattedCurrent = String(current + 1).padStart(2, "0");
   const formattedCount = String(count).padStart(2, "0");
@@ -135,7 +163,10 @@ export function HomeCarousel() {
               variant="outline"
               size="icon"
               aria-label="前のカテゴリを見る"
-              onClick={() => api?.scrollPrev()}
+              onClick={() => {
+                api?.scrollPrev();
+                resetAutoScrollTimer();
+              }}
               className="rounded-full bg-card shadow-panel"
             >
               <HugeiconsIcon
