@@ -74,12 +74,14 @@ export function HomeCarousel() {
   useEffect(() => {
     if (!api) return;
 
+    api.on("pointerDown", clearAutoScrollTimer);
     api.on("pointerUp", resetAutoScrollTimer);
 
     return () => {
+      api.off("pointerDown", clearAutoScrollTimer);
       api.off("pointerUp", resetAutoScrollTimer);
     };
-  }, [api, resetAutoScrollTimer]);
+  }, [api, clearAutoScrollTimer, resetAutoScrollTimer]);
 
   const formattedCurrent = String(current + 1).padStart(2, "0");
   const formattedCount = String(count).padStart(2, "0");
@@ -181,7 +183,10 @@ export function HomeCarousel() {
               variant="default"
               size="icon"
               aria-label="次のカテゴリを見る"
-              onClick={() => api?.scrollNext()}
+              onClick={() => {
+                api?.scrollNext();
+                resetAutoScrollTimer();
+              }}
               className="rounded-full shadow-panel"
             >
               <HugeiconsIcon
