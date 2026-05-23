@@ -26,7 +26,7 @@ export default function Home() {
       <section className="pb-16">
         <HomeCarousel />
 
-        <div className="pt-12">
+        <div id="hometown-categories" className="scroll-mt-32 pt-12">
           <HomeCategoryGrid />
         </div>
       </section>

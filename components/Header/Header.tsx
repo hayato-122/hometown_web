@@ -41,11 +41,8 @@ export function Header() {
         <Link
           href="/"
           onClick={(event) => {
-            if (pathname !== "/") return;
-
             event.preventDefault();
-            window.location.reload();
-            window.scrollTo({ top: 0 });
+            window.location.assign("/");
           }}
           className={cn(
             "group flex h-12 items-center gap-2 whitespace-nowrap rounded-xl px-2.5 transition",

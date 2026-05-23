@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export function HeroIntro() {
@@ -18,7 +17,7 @@ export function HeroIntro() {
         </h1>
         <div className="mt-7 flex justify-center">
           <Button asChild className="rounded-full px-6 shadow-panel">
-            <Link href="#hometown-categories">カテゴリを見る</Link>
+            <a href="#hometown-categories">カテゴリを見る</a>
           </Button>
         </div>
       </div>
@@ -76,7 +75,7 @@ export function HeroIntro() {
         }}
       >
         <Button asChild className="rounded-full px-6 shadow-panel">
-          <Link href="#hometown-categories">カテゴリを見る</Link>
+          <a href="#hometown-categories">カテゴリを見る</a>
         </Button>
       </motion.div>
     </motion.div>
