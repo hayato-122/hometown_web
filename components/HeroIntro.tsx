@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export function HeroIntro() {
   const shouldReduceMotion = useReducedMotion();
@@ -14,6 +16,11 @@ export function HeroIntro() {
         <h1 className="mt-4 text-center font-heading text-4xl font-semibold tracking-[-0.03em] md:text-6xl">
           明石市の魅力を知ろう
         </h1>
+        <div className="mt-7 flex justify-center">
+          <Button asChild className="rounded-full px-6 shadow-panel">
+            <Link href="#hometown-categories">カテゴリを見る</Link>
+          </Button>
+        </div>
       </div>
     );
   }
@@ -56,6 +63,22 @@ export function HeroIntro() {
           明石市の魅力を知ろう
         </motion.h1>
       </div>
+      <motion.div
+        className="mt-7 flex justify-center"
+        variants={{
+          hidden: { y: 20, opacity: 0 },
+          show: { y: 0, opacity: 1 },
+        }}
+        transition={{
+          duration: 0.9,
+          delay: 0.5,
+          ease: [0.16, 1, 0.7, 1],
+        }}
+      >
+        <Button asChild className="rounded-full px-6 shadow-panel">
+          <Link href="#hometown-categories">カテゴリを見る</Link>
+        </Button>
+      </motion.div>
     </motion.div>
   );
 }
