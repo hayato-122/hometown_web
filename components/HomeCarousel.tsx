@@ -120,7 +120,7 @@ export function HomeCarousel() {
                     href={`/${item.categoryKey}/${item.id}`}
                     className="group block h-full transition duration-300 hover:-translate-y-1 focus-visible:ring-3 focus-visible:ring-ring focus-visible:outline-none"
                   >
-                    <Card className="h-full overflow-hidden rounded-none border-border bg-card p-0 shadow-panel transition duration-300 group-hover:border-primary/40">
+                    <Card className="motion-card motion-panel h-full overflow-hidden rounded-none border-border bg-card p-0 shadow-panel transition duration-300 group-hover:border-primary/40">
                       <div className="relative aspect-video overflow-hidden bg-secondary">
                         <Image
                           src={item.mainImage}
@@ -158,7 +158,7 @@ export function HomeCarousel() {
           </CarouselContent>
         </Carousel>
 
-        <div className="mt-6 flex items-center justify-end gap-4">
+        <div className="mt-2 flex items-center justify-end gap-4">
           <div className="h-px w-28 overflow-hidden bg-border md:w-40">
             <div
               className="h-full bg-primary transition-all duration-500 ease-out"
