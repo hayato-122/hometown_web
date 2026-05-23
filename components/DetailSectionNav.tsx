@@ -44,8 +44,8 @@ export function DetailSectionNav() {
       },
       {
         root: null,
-        rootMargin: "-25% 0px -25% 0px",
-        threshold: [0, 0.15, 0.35, 0.6],
+        rootMargin: "-5% 0px -80% 0px",
+        threshold: [0, 0.1],
       },
     );
 
