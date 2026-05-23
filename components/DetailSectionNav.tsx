@@ -44,8 +44,8 @@ export function DetailSectionNav() {
       },
       {
         root: null,
-        rootMargin: "-25% 0px -25% 0px",
-        threshold: [0, 0.15, 0.35, 0.6],
+        rootMargin: "-5% 0px -80% 0px",
+        threshold: [0, 0.1],
       },
     );
 
@@ -87,7 +87,6 @@ export function DetailSectionNav() {
               key={sectionLink.href}
               href={sectionLink.href}
               aria-current={isActive ? "true" : undefined}
-              onClick={() => setActiveSectionId(sectionLink.id)}
               className={cn(
                 "relative rounded-xl px-3 py-2 text-sm font-medium transition duration-300 before:absolute before:bottom-2 before:left-0 before:top-2 before:w-0.5 before:rounded-full before:bg-transparent",
                 isActive

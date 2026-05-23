@@ -47,7 +47,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
           <ScrollReveal>
             <section
               id="highlights"
-              className="scroll-section scroll-mt-32 overflow-hidden rounded-2xl bg-card shadow-panel ring-1 ring-border/80"
+              className="scroll-section scroll-mt-50 overflow-hidden rounded-2xl bg-card shadow-panel ring-1 ring-border/80"
             >
               <AspectRatio ratio={18 / 9} className="bg-secondary">
                 <Image
@@ -76,7 +76,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
           <ScrollReveal>
             <section
               id="photos"
-              className="scroll-section scroll-mt-32 rounded-2xl bg-card p-6 shadow-panel ring-1 ring-border/80"
+              className="scroll-section scroll-mt-20 rounded-2xl bg-card p-6 shadow-panel ring-1 ring-border/80"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-primary">
                 PHOTOS
@@ -92,7 +92,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
           <ScrollReveal>
             <section
               id="access"
-              className="scroll-section scroll-mt-32 rounded-2xl bg-card p-6 shadow-panel ring-1 ring-border/80"
+              className="scroll-section scroll-mt-20 rounded-2xl bg-card p-6 shadow-panel ring-1 ring-border/80"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-primary">
                 ACCESS

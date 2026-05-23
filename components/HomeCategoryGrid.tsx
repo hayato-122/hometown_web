@@ -28,7 +28,7 @@ export function HomeCategoryGrid() {
               href={category.href}
               className="category-card group relative z-0 block h-full rounded-2xl transition duration-300 hover:z-20 hover:-translate-y-1 focus-visible:z-20 focus-visible:ring-3 focus-visible:ring-ring focus-visible:outline-none"
             >
-              <Card className="h-full bg-card p-3 shadow-panel ring-1 ring-border/80 transition duration-300 group-hover:ring-primary/40">
+              <Card className="motion-card motion-panel h-full bg-card p-3 shadow-panel ring-1 ring-border/80 transition duration-300 group-hover:ring-primary/40">
                 <div className="relative aspect-video overflow-hidden rounded-[24px] bg-secondary">
                   <Image
                     src={category.image}

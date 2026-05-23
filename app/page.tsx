@@ -16,16 +16,16 @@ export default function Home() {
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-linear-to-b from-foreground/30 via-foreground/24 to-foreground/44" />
         <div className="relative z-10 flex max-md:min-h-svh items-center justify-center px-6 py-1 md:min-h-[calc(100svh-380px)] md:px-12">
           <HeroIntro />
         </div>
-        　
       </section>
 
       <section className="pb-16">
         <HomeCarousel />
 
-        <div className="pt-12">
+        <div id="hometown-categories" className="scroll-mt-32 pt-12">
           <HomeCategoryGrid />
         </div>
       </section>
