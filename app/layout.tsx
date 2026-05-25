@@ -26,6 +26,7 @@ export default function RootLayout({
     <html
       lang="ja"
       className={cn("font-sans", inter.variable, dmSans.variable)}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-screen bg-background text-foreground">
         <Header />
