@@ -8,6 +8,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { DetailSectionNav } from "@/components/DetailSectionNav";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { AccessTracker } from "@/components/AccessTracker";
 
 type DetailPageProps = {
   params: Promise<{
@@ -30,6 +31,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
   return (
     <div className="space-y-6">
+      <AccessTracker itemId={item.id} />
       <ScrollReveal y={24}>
         <AppBreadcrumbs
           items={[
