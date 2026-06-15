@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
@@ -24,16 +24,73 @@ export function PhotoGallery({ images, title }: PhotoGalleryProps) {
     null,
   );
 
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
   const selectedImage =
     selectedImageIndex === null ? null : images[selectedImageIndex];
   const hasMultipleImages = images.length > 1;
 
+  // フォーカストラップ: モーダル内のTabキーを常にループさせる
+  const trapFocus = (container: HTMLElement, event: KeyboardEvent) => {
+    // ブラウザのデフォルトTab移動を常に止める
+    event.preventDefault();
+
+    const focusableElements = container.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    if (focusableElements.length === 0) return;
+
+    // 現在フォーカスされている要素のインデックスを調べる
+    const currentIndex = Array.from(focusableElements).indexOf(
+      document.activeElement as HTMLElement,
+    );
+
+    // shiftキーの有無に応じて次/前に移動。端を越えたら折り返す
+    const nextIndex = event.shiftKey
+      ? currentIndex <= 0
+        ? focusableElements.length - 1
+        : currentIndex - 1
+      : currentIndex >= focusableElements.length - 1
+        ? 0
+        : currentIndex + 1;
+
+    focusableElements[nextIndex].focus();
+  };
+
   useEffect(() => {
-    if (selectedImageIndex === null) return;
+    if (selectedImageIndex === null) {
+      // モーダルが閉じられた: 開く前の位置にフォーカスを戻す
+      if (previousFocusRef.current) {
+        previousFocusRef.current.focus();
+        previousFocusRef.current = null;
+      }
+      return;
+    }
+
+    // 開く前のフォーカス位置を保存
+    previousFocusRef.current = document.activeElement as HTMLElement;
+
+    // モーダル内の最初のフォーカス可能要素にフォーカスを移動
+    requestAnimationFrame(() => {
+      const modal = modalRef.current;
+      if (!modal) return;
+
+      const focusableElements = modal.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusableElements.length > 0) {
+        focusableElements[0].focus();
+      }
+    });
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setSelectedImageIndex(null);
+      }
+
+      if (event.key === "Tab" && modalRef.current) {
+        trapFocus(modalRef.current, event);
       }
 
       if (event.key === "ArrowLeft" && hasMultipleImages) {
@@ -125,6 +182,7 @@ export function PhotoGallery({ images, title }: PhotoGalleryProps) {
             onClick={() => setSelectedImageIndex(null)}
           >
             <motion.div
+              ref={modalRef}
               role="dialog"
               aria-modal="true"
               aria-label={`${title}の拡大写真`}
