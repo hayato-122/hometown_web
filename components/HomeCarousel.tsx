@@ -17,11 +17,13 @@ import {
 
 import { hometownItems } from "@/data/hometownDetails";
 import { motion } from "motion/react";
+import type { HometownItem } from "@/types/hometown";
 
 export function HomeCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(hometownItems.length);
+  const [sortedItems, setSortedItems] = useState<HometownItem[]>(hometownItems);
   const autoScrollTimerRef = useRef<number | null>(null);
 
   const clearAutoScrollTimer = useCallback(() => {
@@ -44,6 +46,23 @@ export function HomeCarousel() {
   const resetAutoScrollTimer = useCallback(() => {
     startAutoScrollTimer();
   }, [startAutoScrollTimer]);
+
+  // API からアクセス数を取得し、多い順にソートする
+  useEffect(() => {
+    fetch("/api/access-count")
+      .then((res) => res.json())
+      .then((counts: Record<string, number>) => {
+        const sorted = [...hometownItems].sort((a, b) => {
+          const countA = counts[a.id] ?? 0;
+          const countB = counts[b.id] ?? 0;
+          return countB - countA;
+        });
+        setSortedItems(sorted);
+      })
+      .catch(() => {
+        // API がエラーでも元の順序で表示を続ける
+      });
+  }, []);
 
   useEffect(() => {
     if (!api) return;
@@ -100,7 +119,7 @@ export function HomeCarousel() {
           className="w-full"
         >
           <CarouselContent className="-ml-5">
-            {hometownItems.map((item, index) => (
+            {sortedItems.map((item, index) => (
               <CarouselItem
                 key={item.id}
                 className="basis-full pl-5 sm:basis-1/2 lg:basis-1/3"
