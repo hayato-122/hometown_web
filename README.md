@@ -1,6 +1,6 @@
 # 明石ガイド - AKASHI GUIDE
 
-兵庫県明石市の歴史・食べ物・自然・建築物・観光地・産業をカテゴリ別に紹介する地元ガイドWebアプリケーション。C# / Blazor 版を Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で再構築しました。
+兵庫県明石市の歴史・食べ物・自然・建築物・観光地・産業をカテゴリ別に紹介する地元ガイドWebアプリケーション。Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築しました。
 
 [![Next.js](https://img.shields.io/badge/Next.js_16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React_19-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
